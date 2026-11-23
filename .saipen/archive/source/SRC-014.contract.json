@@ -1,0 +1,14 @@
+{
+  "clauses": {
+    "SRC-014:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "text": "\u0410\u0432\u0442\u043e\u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430 Blender \u0438 \u0437\u0430\u0432\u0438\u0441\u0438\u043c\u043e\u0441\u0442\u0435\u0439 \u0432 \u0444\u043e\u043d\u0435 \u0438\u0437 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b, \u043f\u043b\u044e\u0441 \u0432\u0441\u0442\u0440\u043e\u0435\u043d\u043d\u043e\u0435 \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u0438help \u043f\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044e"
+    }
+  },
+  "derived_at": "2026-11-23T20:50:34Z",
+  "derived_from": "SRC-014",
+  "interpretation_revision": 1,
+  "schema_version": 1,
+  "source_sha256": "bea8847a02e65e00b073a43aab4a28f6e45bb4dc93be08b656b15e8e44a06bb7"
+}

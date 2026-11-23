@@ -1,0 +1,3 @@
+{
+  "run_text": "Post-publication audit of v0.0.1 release (head d63b6aa). T-17 closed: VERSION=0.0.1, rebuilt CLI/GUI/test exes, release binaries versioned in repo, tag v0.0.1 and GitHub Release assets published. Re-verified: ./release/bzconv.exe --version -> bzconv 0.0.1; ./release/bzconv_tests.exe -> 35/35 PASS; regression_T14 OK; fidelity/evaluator oracles ALL GREEN; RELEASE_EVIDENCE.json manifest hash and 10/10 artifact hashes OK. This cycle was admitted only by the final SAIPEN bookkeeping commit (closure of SRC-013 and T-17); no source, doc or release artifact byte changed after the published release f5e0aa8. No new defect found.\nNO_FINDINGS -- post-release bookkeeping-only commit; all v0.0.1 gates green and the published release bytes are unchanged."
+}

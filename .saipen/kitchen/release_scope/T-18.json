@@ -1,0 +1,27 @@
+{
+  "op_id": "scope-dc6111f0f5fd41ec81402942dfabebe7",
+  "paths": {
+    "CHANGELOG.md": "9eb386251fd27e38d6e49c962a27eb925a3bd26f064c33181f08e6b33d54a94c",
+    "CMakeLists.txt": "aab515a8237afd14d754f5b17c2617f88e3a6a0eb8900ed5e9cf2e77a719c2f2",
+    "README.ded.md": "631802f2f6f58a9aa05f9553c42f18e571d5bb7e7da912312f79b4f25d589047",
+    "README.ee.md": "b6ac4262ebbf72460c8567b2ea0467c6f408f3bf160564e7988f3ef050e4c26e",
+    "README.ja.md": "9bc2682fd3d196f049725bb9cf83c3e6bd0544451cdb063172d9b8c6eb44ba03",
+    "README.md": "7ac71086a5539069b0399f186c28963be2cbc0929ef045c442878c1eb1381acd",
+    "RELEASE_EVIDENCE.json": "1cdb4f4982375e74594f0d4908da6fe76f09b79dcad15883ad08753845401ad3",
+    "RELEASE_NOTES.md": "517c130a3178538bc31ed0e3068603652311d1836df5c02d51e5291f20b824e5",
+    "VERSION": "d0f85372cc52cc34d88e98b63f42bf2f1da5e14914c94c3cb52220b3b13da944",
+    "release/bzconv.exe": "bf331ff380ac2acb2c99376dea98e9ed5afa09275a705402c94bac6bf5f5a2d4",
+    "release/bzconv_gui.exe": "f71a9575e370294d3e1ebd7dc437f93eb22d3adb6a22c876eb2c4db8348b05eb",
+    "release/bzconv_tests.exe": "a3239d374aa5422d5d4f2a6365635fc2e0c5b708eaf338964bceaad98d794ab0",
+    "src/bzconverter/exporters/glb_exporter.cpp": "6282a4e896d5a8a7fbb8ecbf0137b9f31489b3eb0ea736d1d04eb2a31e62244b",
+    "src/cli/main.cpp": "dd87a341119f17ba4cc6c81676bec43a5de924877a60a2d9689582e9d3c22c9c",
+    "src/gui/gui_main.cpp": "f2328d6800281550a64f8a1341b4128d100688f28c1485ab0351f19e51736565"
+  },
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "recorded_at": "2026-11-23T20:49:45Z",
+  "schema_version": 2,
+  "source_head": "d63b6aaa2badd38e060be6d286a5619bab4a20f9",
+  "source_tree_fingerprint": "git-delta-v1:d6330424211ef9718b3519a47ae722868bb95f4a2176402097d95445798680a3",
+  "ticket": "T-18"
+}

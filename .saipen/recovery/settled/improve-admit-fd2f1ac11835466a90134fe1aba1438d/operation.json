@@ -1,0 +1,35 @@
+{
+  "op_id": "improve-admit-fd2f1ac11835466a90134fe1aba1438d",
+  "operation": "improve_admit",
+  "created_at": "2026-11-23T20:35:06Z",
+  "agent": "saipen-01",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "semantic_payload_hash": "cab326e4f56987e1",
+  "preconditions": {
+    ".saipen/improve/imp-vacterro-bz_xsi_msh_fbx_converter-20261123-5/MANIFEST.md": "",
+    ".saipen/improve/imp-vacterro-bz_xsi_msh_fbx_converter-20261123-5/saipen-01/saipen_improve_SAIPEN.md": ""
+  },
+  "read_preconditions": {},
+  "verification_policy": "improve_atomic_file",
+  "status": "COMMITTED",
+  "progress_index": 2,
+  "targets": [
+    {
+      "path": ".saipen/improve/imp-vacterro-bz_xsi_msh_fbx_converter-20261123-5/MANIFEST.md",
+      "role": "manifest",
+      "action": "write",
+      "before_hash": "",
+      "after_hash": "a027fae7965d497e",
+      "applied": true
+    },
+    {
+      "path": ".saipen/improve/imp-vacterro-bz_xsi_msh_fbx_converter-20261123-5/saipen-01/saipen_improve_SAIPEN.md",
+      "role": "report",
+      "action": "write",
+      "before_hash": "",
+      "after_hash": "9c0dbfb74898210a",
+      "applied": true
+    }
+  ]
+}

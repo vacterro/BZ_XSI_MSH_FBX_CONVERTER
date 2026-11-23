@@ -1,0 +1,46 @@
+{
+  "op_id": "transition-218f0d6e295d478e8db70307eeef7fcd",
+  "operation": "transition",
+  "created_at": "2026-11-23T20:46:57Z",
+  "agent": "saipen",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "semantic_payload_hash": "59a1e624c4ce16ba",
+  "preconditions": {
+    ".saipen/STATE.md": "1266abc9a13b5bfa",
+    ".saipen/BOARD.md": "34fe75e7292e9952",
+    ".saipen/LOG.md": "28db2f015b9b9dce"
+  },
+  "read_preconditions": {
+    ".saipen/logs": "tree-missing-v1"
+  },
+  "verification_policy": "core_fast",
+  "status": "COMMITTED",
+  "progress_index": 3,
+  "targets": [
+    {
+      "path": ".saipen/LOG.md",
+      "role": "log",
+      "action": "write",
+      "before_hash": "28db2f015b9b9dce",
+      "after_hash": "8a1c465ea4f955c8",
+      "applied": true
+    },
+    {
+      "path": ".saipen/BOARD.md",
+      "role": "board",
+      "action": "write",
+      "before_hash": "34fe75e7292e9952",
+      "after_hash": "34fe75e7292e9952",
+      "applied": true
+    },
+    {
+      "path": ".saipen/STATE.md",
+      "role": "state",
+      "action": "write",
+      "before_hash": "1266abc9a13b5bfa",
+      "after_hash": "a5c51858e4602d26",
+      "applied": true
+    }
+  ]
+}
