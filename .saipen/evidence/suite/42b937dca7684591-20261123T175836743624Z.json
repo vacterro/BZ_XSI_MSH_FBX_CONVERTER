@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "kind": "saipen-suite-record",
+  "command": [
+    "bzconv_tests.exe",
+    "--json"
+  ],
+  "command_sha256": "42b937dca7684591341f11674269b28a61895f38586aac56773094ef50a160d0",
+  "status": "PASS",
+  "exit_code": 0,
+  "totals": null,
+  "duration_s": 18.0,
+  "timeout_s": 3600,
+  "subject_before": "tree:1ed09b6d245164612346733367b0e1ce9f084780ec26a62bb6246481306fb0be",
+  "subject": "tree:1ed09b6d245164612346733367b0e1ce9f084780ec26a62bb6246481306fb0be",
+  "stdout_tail": "e_limit_and_renormalization... PASSED\n[RUN]  test_glb_influence_edge_cases... PASSED\n[RUN]  test_status_glb_loss_forces_partial... PASSED\n[RUN]  test_gltf_sidecar_overwrite_policy... PASSED\n[RUN]  test_gltf_texture_sidecar_overwrite_policy... PASSED\n[RUN]  test_obj_sidecar_overwrite_policy... PASSED\n[RUN]  test_companion_multiclip_same_bone... PASSED\n[RUN]  test_output_bundle_cancel_reason... PASSED\n[RUN]  test_output_bundle_commit_cleans_durable_stage... PASSED\n[RUN]  test_output_bundle_recover_interrupted_commit... PASSED\n[RUN]  test_cli_recover_dispatch...V:\\_TEMP_\\bzconv_t12_cli_recover\\.scene.obj.bzconv-stage: recovered (restored 1, removed 0, already-consistent 0)\nRECOVERY: OK\n PASSED\n[RUN]  test_glb_model_space_no_double_transform... PASSED\n[RUN]  test_input_output_identity_guard... PASSED\n[RUN]  test_glb_texture_loss_diagnostics... PASSED\n[RUN]  test_glb_rotated_model_space_normal... PASSED\n[RUN]  test_glb_parent_after_child_order... PASSED\n[RUN]  test_glb_skinned_model_space_bind_pose... PASSED\n[RUN]  test_glb_invalid_images_rejected... PASSED\n---- T-9 (SAIHANDOFF-11) regression cases ----\n[RUN]  t9_world_space_normal_reconstruction...[T9] t9_world_space_normal_reconstruction PASSED\n PASSED\n[RUN]  t9_missing_joint_attributes...[T9] t9_missing_joint_attributes PASSED\n PASSED\n[RUN]  t9_invalid_jpeg_rejected...[T9] t9_invalid_jpeg_rejected PASSED\n PASSED\n[RUN]  t9_valid_indexed_png_accepted...[T9] t9_valid_indexed_png_accepted PASSED\n PASSED\n[RUN]  t9_cycle_not_serialized...[T9] t9_cycle_not_serialized PASSED\n PASSED\n[RUN]  t9_instance_localization...[T9] t9_instance_localization PASSED\n PASSED\n[RUN]  test_durable_per_entry_commit_checkpoint... PASSED\n[RUN]  test_prepare_preserves_pending_recovery... PASSED\n[RUN]  test_failed_recovery_preserves_evidence... PASSED\n[RUN]  test_third_party_modification_detected... PASSED\n[RUN]  test_crash_after_all_files_before_completion... PASSED\n========================================\nSummary: 35/35 passed (ALL TESTS PASSED)\n",
+  "stderr_tail": "",
+  "tree_changed_during_run": false,
+  "finished_utc": "2026-11-23T17:58:36Z",
+  "verdict": "PASS",
+  "problems": []
+}

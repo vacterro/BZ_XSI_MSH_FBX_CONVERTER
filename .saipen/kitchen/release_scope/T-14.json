@@ -1,0 +1,18 @@
+{
+  "op_id": "scope-bef644ce44d9470495e48d2d0f32e638",
+  "paths": {
+    ".saipen/evidence/pre/source_fidelity_check.t14_pre.py": "2d3306214fc247a3b354f1a82c80ee506677a8ddef689403767440b85eb554db",
+    ".saipen/evidence/regression_contract_T14.json": "4039e9b8e587ad6d529363c371260f5ca35d82341f59d718cc7ddcbac757c24c",
+    "src/cli/main.cpp": "51d8875c4075fa579477ea23d5262125833e36cdc38ee22919c3dbab044cdf1e",
+    "tools/regression_check_T14.py": "538d20df17d23d5deefa6ccdff6818656e7f2b3bd6282b672bfb813f5ef2b22e",
+    "tools/source_fidelity_check.py": "e5f2be5c29a79f5514cdf3c2fe3b65c5482f5e75fbb27f2e05f80237b6106a91",
+    "tools/test_source_fidelity_oracle.py": "c29137aa05265aeabc8e43825868f296217c3c1089e18ec1da121e4a5b41115b"
+  },
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "recorded_at": "2026-11-23T18:47:49Z",
+  "schema_version": 2,
+  "source_head": "no-git",
+  "source_tree_fingerprint": "no-git-tree-v1:3164fe9e4d837f73d5d6bb6ac1aa8685d7fa2c056832d093216b7c5729509d09",
+  "ticket": "T-14"
+}

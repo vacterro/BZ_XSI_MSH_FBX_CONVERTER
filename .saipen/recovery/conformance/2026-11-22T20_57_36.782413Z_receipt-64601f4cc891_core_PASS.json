@@ -1,0 +1,30 @@
+{
+  "blocking_findings": {
+    "problem_count": 0,
+    "problems": [],
+    "ruleset_fingerprint": "9a47d608ed3f3a833348aaeeca5cd9e9076f3bf53b1ef92b6ade46958e3e3fec",
+    "ruleset_version": 2,
+    "status": "complete",
+    "warning_count": 2
+  },
+  "board_hash": "4246e532d2eda656",
+  "canonical_next_command": null,
+  "content_hash": "d9bef91d93fd58f2",
+  "exit_code": 0,
+  "external_actions": [],
+  "gate": "core",
+  "install_fingerprint": "install-v1:c45ec2878b630842d9f1a879f902edac6de57592c7026c30598897ff2317d4ed",
+  "install_home": "C:\\Users\\vac34\\AppData\\Local\\saipen\\scheduled-source",
+  "kind": "conformance_receipt",
+  "log_hash": "1c5fd893fc453fd8",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "receipt_id": "receipt-64601f4cc891",
+  "remediation_commands": [],
+  "schema_version": 2,
+  "source_head": "no-git",
+  "source_tree_fingerprint": "no-git-tree-v1:f6160e8fb27232a4ca6ae1440aeb3b6fa5a6c56d46f9bf3c027c89b83f5f342d",
+  "state_hash": "e20c5e3fd97b4472",
+  "timestamp_utc": "2026-11-22T20:57:36.782413Z",
+  "validator_protocol_version": "1",
+  "verdict": "PASS"
+}

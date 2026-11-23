@@ -1,0 +1,62 @@
+{
+  "board_sha256": "b3666a06dbc042d6",
+  "bound_work": "T-14",
+  "bound_work_phase": "SCOUT",
+  "created_at": "2026-11-23T18:28:52Z",
+  "findings_digest": "23e052927c673e6e0aa173f5f795fc82ca423b4f4429ec1abfe1b8f84bfe98f0",
+  "gate": "core",
+  "journal_op_id": "debt.snapshot-ca94626dd383",
+  "log_fingerprint": "e3c6c540b7ae78ad",
+  "problem_count": 0,
+  "problems": [],
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "reason": "pre-BUILD debt baseline for T-14",
+  "ruleset_fingerprint": "9a47d608ed3f3a833348aaeeca5cd9e9076f3bf53b1ef92b6ade46958e3e3fec",
+  "ruleset_version": 2,
+  "schema_version": 1,
+  "snapshot_id": "DEBT-000014",
+  "source_head": "no-git",
+  "source_tree_fingerprint": "no-git-tree-v1:276ef9ad611798729346f8a9c31a336348ff74eea9e4454ca6e8275784b3335f",
+  "state_sha256": "b6bacf0fe35abf16",
+  "validator_protocol_version": "1",
+  "warning_count": 3,
+  "warnings": [
+    {
+      "category": "no-conformance-record",
+      "credential": false,
+      "detail": "no LOG line records a conformance run in \u00a7 1.2's fixed form (`RUN: validate.py -> PASS` or `-> FAIL`), so \u00a7 1.10's `saipen status` has nothing to report under Conformance and a cold agent must either ",
+      "detail_hash": "0f511cf104b0873e",
+      "finding_key": "76b48f23558dce11",
+      "rule_id": "unclassified",
+      "severity": "warning",
+      "subject_id": null,
+      "subject_kind": "global",
+      "subject_ref": null
+    },
+    {
+      "category": "log-soft-cap",
+      "credential": false,
+      "detail": ".saipen/LOG.md is <n> / <n>, past the <n> / <n> cap -- `saipen transition CLEAN` seals it into the next .saipen/logs/LOG-<NNN>.md (phases/clean.md step 4)",
+      "detail_hash": "dfb4bf66467774ab",
+      "finding_key": "64be00fb9de17a5d",
+      "rule_id": "log_soft_cap",
+      "severity": "warning",
+      "subject_id": null,
+      "subject_kind": "global",
+      "subject_ref": null
+    },
+    {
+      "category": "changelog-unarchived",
+      "credential": false,
+      "detail": "CHANGELOG.md carries <n> while it states it keeps the most recent ~10 -- the overflow belongs in CHANGELOG_ARCHIVE.md, moved verbatim the way LOG segments are sealed, so the top of the file stays the part anyone actually reads",
+      "detail_hash": "434b52b44ae55366",
+      "finding_key": "a0424a3e4cacc44c",
+      "rule_id": "changelog_unarchived",
+      "severity": "warning",
+      "subject_id": null,
+      "subject_kind": "global",
+      "subject_ref": null
+    }
+  ]
+}

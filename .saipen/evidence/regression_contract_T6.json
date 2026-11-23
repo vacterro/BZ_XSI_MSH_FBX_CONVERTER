@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "command": [
+    "{python}",
+    "-B",
+    "tools/regression_check_T8.py"
+  ],
+  "format": "unittest",
+  "context": [
+    "tools/regression_check_T8.py",
+    "tests/test_main.cpp",
+    "VERSION",
+    "src/bzconverter/core/json.hpp",
+    "src/bzconverter/core/output_bundle.hpp",
+    "src/bzconverter/core/sha256.hpp",
+    "src/bzconverter/core/types.hpp",
+    "src/bzconverter/exporters/exporter.hpp",
+    "src/bzconverter/exporters/fbx_exporter.cpp",
+    "src/bzconverter/exporters/fbx_exporter.hpp",
+    "src/bzconverter/exporters/glb_exporter.cpp",
+    "src/bzconverter/exporters/glb_exporter.hpp",
+    "src/bzconverter/exporters/obj_exporter.cpp",
+    "src/bzconverter/exporters/obj_exporter.hpp",
+    "src/bzconverter/formats/msh/msh_parser.cpp",
+    "src/bzconverter/formats/msh/msh_parser.hpp",
+    "src/bzconverter/formats/probe.cpp",
+    "src/bzconverter/formats/probe.hpp",
+    "src/bzconverter/formats/xsi/xsi_parser.cpp",
+    "src/bzconverter/formats/xsi/xsi_parser.hpp",
+    "src/bzconverter/materials/material_resolver.cpp",
+    "src/bzconverter/materials/material_resolver.hpp",
+    "src/bzconverter/materials/texture_codec.cpp",
+    "src/bzconverter/materials/texture_codec.hpp",
+    "src/bzconverter/scene/scene.cpp",
+    "src/bzconverter/scene/scene.hpp",
+    "src/bzconverter/validation/validator.cpp",
+    "src/bzconverter/validation/validator.hpp",
+    "src/cli/main.cpp",
+    "src/gui/gui_main.cpp",
+    "xsi's/ivtank00.xsi",
+    "xsi's/mebridge2.xsi",
+    "xsi's/sgbzka_stand.xsi",
+    "src/bzconverter/exporters/blender_scripts/bz_fbx_bridge.py"
+  ],
+  "oracle_files": [
+    "tools/regression_check_T8.py"
+  ],
+  "subject_files": [
+    "src/bzconverter/exporters/glb_exporter.cpp"
+  ],
+  "before": {
+    "src/bzconverter/exporters/glb_exporter.cpp": ".saipen/evidence/pre/glb_exporter.normal.buggy.cpp"
+  },
+  "timeout": 600
+}

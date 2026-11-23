@@ -1,0 +1,14 @@
+{
+  "clauses": {
+    "SRC-006:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "text": "Fix confirmed P0 defects from SAIHANDOFF: GLB influence cap + weight renormalization, GLB loss diagnostics to status, transactional multi-file output bundles with GLTF .bin and OBJ .mtl/texture overwrite safety, companion multi-clip coverage; add RED/GREEN regressions"
+    }
+  },
+  "derived_at": "2026-11-22T23:54:36Z",
+  "derived_from": "SRC-006",
+  "interpretation_revision": 1,
+  "schema_version": 1,
+  "source_sha256": "60dd877aa18638549e9bf555ae943af183112d14fa1e0486c178d6b57d4da239"
+}

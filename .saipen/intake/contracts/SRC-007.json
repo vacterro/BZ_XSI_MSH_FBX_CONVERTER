@@ -1,0 +1,14 @@
+{
+  "clauses": {
+    "SRC-007:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "text": "Fix new confirmed P0 defects from SAIHANDOFF-9: GLB double transform for vertices_in_model_space, core input/output identity guard, silent texture loss diagnostics; then fix OutputBundle cancellation error propagation and add RED/GREEN regressions"
+    }
+  },
+  "derived_at": "2026-11-23T00:27:52Z",
+  "derived_from": "SRC-007",
+  "interpretation_revision": 1,
+  "schema_version": 1,
+  "source_sha256": "076a28b6c4e3bec930f55a0fe7cf5fa95f2eeac69a61eea48458bd22ccc7c0ff"
+}

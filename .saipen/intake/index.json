@@ -1,0 +1,164 @@
+{
+  "active": {
+    "SRC-006": {
+      "linked_work": "T-6",
+      "source_sha256": "60dd877aa18638549e9bf555ae943af183112d14fa1e0486c178d6b57d4da239"
+    },
+    "SRC-007": {
+      "linked_work": "T-7",
+      "source_sha256": "076a28b6c4e3bec930f55a0fe7cf5fa95f2eeac69a61eea48458bd22ccc7c0ff"
+    },
+    "SRC-008": {
+      "linked_work": "T-8",
+      "source_sha256": "31b4e58a914185fc26729374bea5c713cb1cc9e07863fc036e97f8f7cc98d685"
+    }
+  },
+  "next_id": 13,
+  "schema_version": 1,
+  "tombstones": {
+    "SRC-001": {
+      "actionable": 1,
+      "archive_ref": ".saipen/archive/source/SRC-001.md",
+      "closed_at": "2026-11-22T20:02:17Z",
+      "closure_event": null,
+      "linked_work": "T-1",
+      "linked_works": [
+        "T-1"
+      ],
+      "receipt_id": "SRC-001",
+      "requirements": 1,
+      "schema_version": 1,
+      "source_sha256": "f03108363f50e90875dccad754720c240b784e5836b5dfd99f4ad1a26a98743a",
+      "status": "CLOSED",
+      "unresolved": 0
+    },
+    "SRC-002": {
+      "actionable": 1,
+      "archive_ref": ".saipen/archive/source/SRC-002.md",
+      "closed_at": "2026-11-22T20:27:33Z",
+      "closure_event": null,
+      "linked_work": "T-2",
+      "linked_works": [
+        "T-2"
+      ],
+      "receipt_id": "SRC-002",
+      "requirements": 1,
+      "schema_version": 1,
+      "source_sha256": "e05abb3437c2d1e3d6e8b3ae571871dad8b84580323f721c831c44bb6883b3ae",
+      "status": "CLOSED",
+      "unresolved": 0
+    },
+    "SRC-003": {
+      "actionable": 1,
+      "archive_ref": ".saipen/archive/source/SRC-003.md",
+      "closed_at": "2026-11-22T21:26:27Z",
+      "closure_event": null,
+      "linked_work": "T-3",
+      "linked_works": [
+        "T-3"
+      ],
+      "receipt_id": "SRC-003",
+      "requirements": 1,
+      "schema_version": 1,
+      "source_sha256": "935e4fbdc646eaa00f77d03981d75bf72aee03c2978a3c7d6e4f0356651c502c",
+      "status": "CLOSED",
+      "unresolved": 0
+    },
+    "SRC-004": {
+      "actionable": 1,
+      "archive_ref": ".saipen/archive/source/SRC-004.md",
+      "closed_at": "2026-11-22T21:33:58Z",
+      "closure_event": null,
+      "linked_work": "T-4",
+      "linked_works": [
+        "T-4"
+      ],
+      "receipt_id": "SRC-004",
+      "requirements": 1,
+      "schema_version": 1,
+      "source_sha256": "c764c7d9547e2b3c0c58960ecc970031becdcd5b982fef41ac77de48e9caf0d2",
+      "status": "CLOSED",
+      "unresolved": 0
+    },
+    "SRC-005": {
+      "actionable": 1,
+      "archive_ref": ".saipen/archive/source/SRC-005.md",
+      "closed_at": "2026-11-22T22:22:43Z",
+      "closure_event": null,
+      "linked_work": "T-5",
+      "linked_works": [
+        "T-5"
+      ],
+      "receipt_id": "SRC-005",
+      "requirements": 1,
+      "schema_version": 1,
+      "source_sha256": "2a29a971ce12a310780922394112a2855ae5e75dc7dde4bffd2fe7c8d899dbb3",
+      "status": "CLOSED",
+      "unresolved": 0
+    },
+    "SRC-009": {
+      "actionable": 1,
+      "archive_ref": ".saipen/archive/source/SRC-009.md",
+      "closed_at": "2026-11-23T07:05:56Z",
+      "closure_event": null,
+      "linked_work": "T-9",
+      "linked_works": [
+        "T-9"
+      ],
+      "receipt_id": "SRC-009",
+      "requirements": 1,
+      "schema_version": 1,
+      "source_sha256": "b2e42be751d12f8a12971ef47a1edaac3249f81d55fcd95af919325333fcd710",
+      "status": "CLOSED",
+      "unresolved": 0
+    },
+    "SRC-010": {
+      "actionable": 1,
+      "archive_ref": ".saipen/archive/source/SRC-010.md",
+      "closed_at": "2026-11-23T16:39:44Z",
+      "closure_event": null,
+      "linked_work": "T-11",
+      "linked_works": [
+        "T-11"
+      ],
+      "receipt_id": "SRC-010",
+      "requirements": 1,
+      "schema_version": 1,
+      "source_sha256": "e3a672173f4c1645d9d76da459df0e056cef6cd634e615c45641a007ce37f73c",
+      "status": "CLOSED",
+      "unresolved": 0
+    },
+    "SRC-011": {
+      "actionable": 1,
+      "archive_ref": ".saipen/archive/source/SRC-011.md",
+      "closed_at": "2026-11-23T18:00:39Z",
+      "closure_event": null,
+      "linked_work": "T-13",
+      "linked_works": [
+        "T-13"
+      ],
+      "receipt_id": "SRC-011",
+      "requirements": 1,
+      "schema_version": 1,
+      "source_sha256": "d9b0dd2cea7e456084c0ff0d2db654e4c2bbf4242d7c60d5ead676c6b029ce84",
+      "status": "CLOSED",
+      "unresolved": 0
+    },
+    "SRC-012": {
+      "actionable": 1,
+      "archive_ref": ".saipen/archive/source/SRC-012.md",
+      "closed_at": "2026-11-23T19:03:47Z",
+      "closure_event": null,
+      "linked_work": "T-14",
+      "linked_works": [
+        "T-14"
+      ],
+      "receipt_id": "SRC-012",
+      "requirements": 1,
+      "schema_version": 1,
+      "source_sha256": "4c2e9d8fe83f5c4658ffde3d736a28c1d6a963dc47eec755d69a675b124b822d",
+      "status": "CLOSED",
+      "unresolved": 0
+    }
+  }
+}

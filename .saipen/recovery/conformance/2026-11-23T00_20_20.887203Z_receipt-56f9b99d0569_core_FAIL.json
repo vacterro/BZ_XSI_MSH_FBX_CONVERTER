@@ -1,0 +1,43 @@
+{
+  "blocking_findings": {
+    "problem_count": 1,
+    "problems": [
+      {
+        "category": null,
+        "credential": false,
+        "detail": ".saipen/kitchen/digest.md must be exactly three lines -- done:/remaining:/awaiting: in that order (phases/ship.md, RFC \u00a7 1.10); got 1 line(s)",
+        "detail_hash": "4f6e2dd49b8d1780",
+        "finding_key": "76b48f23558dce11",
+        "rule_id": "unclassified",
+        "severity": "problem",
+        "subject_id": null,
+        "subject_kind": "global",
+        "subject_ref": null
+      }
+    ],
+    "ruleset_fingerprint": "9a47d608ed3f3a833348aaeeca5cd9e9076f3bf53b1ef92b6ade46958e3e3fec",
+    "ruleset_version": 2,
+    "status": "complete",
+    "warning_count": 2
+  },
+  "board_hash": "2c042c019b5bee0f",
+  "canonical_next_command": null,
+  "content_hash": "b1b5a8eb91c165b5",
+  "exit_code": 1,
+  "external_actions": [],
+  "gate": "core",
+  "install_fingerprint": "install-v1:c45ec2878b630842d9f1a879f902edac6de57592c7026c30598897ff2317d4ed",
+  "install_home": "C:\\Users\\vac34\\AppData\\Local\\saipen\\scheduled-source",
+  "kind": "conformance_receipt",
+  "log_hash": "a029cc151f64f413",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "receipt_id": "receipt-56f9b99d0569",
+  "remediation_commands": [],
+  "schema_version": 2,
+  "source_head": "no-git",
+  "source_tree_fingerprint": "no-git-tree-v1:ca9e7853a8ea2981c69421b3693157b047c902bc21c617d6a764af1c24acbbb9",
+  "state_hash": "996396ca9dde5944",
+  "timestamp_utc": "2026-11-23T00:20:20.887203Z",
+  "validator_protocol_version": "1",
+  "verdict": "FAIL"
+}

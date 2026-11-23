@@ -1,0 +1,26 @@
+{
+  "op_id": "improve-rebind-fa5181552bf74882abbf299ebe6617d9",
+  "operation": "improve_rebind",
+  "created_at": "2026-11-22T21:28:33Z",
+  "agent": "saipen-01",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "semantic_payload_hash": "28e2b2eb10a7a2da",
+  "preconditions": {
+    ".saipen/improve/imp-_bz_xsi_msh_fbx_converter-20261122-2/saipen-01/saipen_improve_SAIPEN.md": "c335d4e1be3454ad"
+  },
+  "read_preconditions": {},
+  "verification_policy": "improve_atomic_file",
+  "status": "COMMITTED",
+  "progress_index": 1,
+  "targets": [
+    {
+      "path": ".saipen/improve/imp-_bz_xsi_msh_fbx_converter-20261122-2/saipen-01/saipen_improve_SAIPEN.md",
+      "role": "report",
+      "action": "write",
+      "before_hash": "c335d4e1be3454ad",
+      "after_hash": "6b83222b8daf2988",
+      "applied": true
+    }
+  ]
+}

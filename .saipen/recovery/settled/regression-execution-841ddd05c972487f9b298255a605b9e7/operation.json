@@ -1,0 +1,66 @@
+{
+  "op_id": "regression-execution-841ddd05c972487f9b298255a605b9e7",
+  "operation": "regression_execution",
+  "created_at": "2026-11-23T18:45:31Z",
+  "agent": "saipen",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "semantic_payload_hash": "9b9717beb10fc3c9",
+  "preconditions": {
+    ".saipen/STATE.md": "33ea61ccd968963b",
+    ".saipen/BOARD.md": "811497ed03e0569c",
+    ".saipen/LOG.md": "d2a207b7fcbb953c"
+  },
+  "read_preconditions": {
+    ".saipen/logs": "tree-missing-v1",
+    ".": "source-identity-v1:cfa367e470bcc0c2eb3f30934e90f4ac3e1937d363545944ed806c118f24a81d",
+    "tools/source_fidelity_check.py": "e5f2be5c29a79f55",
+    "tools/regression_check_T14.py": "538d20df17d23d5d",
+    "tools/test_source_fidelity_oracle.py": "c29137aa05265aea",
+    "tools/gltf_scene_evaluator.py": "b2a2ceaac3858a0d",
+    ".saipen/evidence/regression_contract_T14.json": "4039e9b8e587ad6d",
+    ".saipen/evidence/pre/source_fidelity_check.t14_pre.py": "2d3306214fc247a3"
+  },
+  "verification_policy": "core_fast",
+  "status": "COMMITTED",
+  "progress_index": 4,
+  "targets": [
+    {
+      "path": ".saipen/evidence/regression/regression-execution-841ddd05c972487f9b298255a605b9e7.json",
+      "role": "generic",
+      "action": "write",
+      "before_hash": "",
+      "after_hash": "dda710559192c33f",
+      "applied": true
+    },
+    {
+      "path": ".saipen/LOG.md",
+      "role": "log",
+      "action": "write",
+      "before_hash": "d2a207b7fcbb953c",
+      "after_hash": "ce78543e3a4aace9",
+      "applied": true
+    },
+    {
+      "path": ".saipen/BOARD.md",
+      "role": "board",
+      "action": "write",
+      "before_hash": "811497ed03e0569c",
+      "after_hash": "f4e8e1f2e8b2d23d",
+      "applied": true
+    },
+    {
+      "path": ".saipen/STATE.md",
+      "role": "state",
+      "action": "write",
+      "before_hash": "33ea61ccd968963b",
+      "after_hash": "6d2453a5c81fab0e",
+      "applied": true
+    }
+  ],
+  "receipt_metadata": {
+    "ticket_id": "T-14",
+    "regression_record": ".saipen/evidence/regression/regression-execution-841ddd05c972487f9b298255a605b9e7.json",
+    "regression_sha256": "dda710559192c33fef8e1c272c0cf11522302ebeba912557e883346e39313dfd"
+  }
+}

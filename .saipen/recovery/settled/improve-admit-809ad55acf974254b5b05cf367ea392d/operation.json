@@ -1,0 +1,35 @@
+{
+  "op_id": "improve-admit-809ad55acf974254b5b05cf367ea392d",
+  "operation": "improve_admit",
+  "created_at": "2026-11-23T16:58:36Z",
+  "agent": "saipen-02",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "semantic_payload_hash": "74f66ac3f3e55724",
+  "preconditions": {
+    ".saipen/improve/imp-_bz_xsi_msh_fbx_converter-20261123-3/MANIFEST.md": "4c69417efc6b1704",
+    ".saipen/improve/imp-_bz_xsi_msh_fbx_converter-20261123-3/saipen-02/saipen_improve_SAIPEN.md": ""
+  },
+  "read_preconditions": {},
+  "verification_policy": "improve_atomic_file",
+  "status": "COMMITTED",
+  "progress_index": 2,
+  "targets": [
+    {
+      "path": ".saipen/improve/imp-_bz_xsi_msh_fbx_converter-20261123-3/MANIFEST.md",
+      "role": "manifest",
+      "action": "write",
+      "before_hash": "4c69417efc6b1704",
+      "after_hash": "672a60b2201e30d2",
+      "applied": true
+    },
+    {
+      "path": ".saipen/improve/imp-_bz_xsi_msh_fbx_converter-20261123-3/saipen-02/saipen_improve_SAIPEN.md",
+      "role": "report",
+      "action": "write",
+      "before_hash": "",
+      "after_hash": "c44e821e248ca1d5",
+      "applied": true
+    }
+  ]
+}

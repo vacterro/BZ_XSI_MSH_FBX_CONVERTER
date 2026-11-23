@@ -1,0 +1,30 @@
+{
+  "blocking_findings": {
+    "problem_count": 0,
+    "problems": [],
+    "ruleset_fingerprint": "9a47d608ed3f3a833348aaeeca5cd9e9076f3bf53b1ef92b6ade46958e3e3fec",
+    "ruleset_version": 2,
+    "status": "complete",
+    "warning_count": 1
+  },
+  "board_hash": "e306d4b76f4b6375",
+  "canonical_next_command": null,
+  "content_hash": "8aa1cf751a097840",
+  "exit_code": 0,
+  "external_actions": [],
+  "gate": "core",
+  "install_fingerprint": "install-v1:c3cdc23620f8598d38e7343aaa03fae109bb87f9624c8b5439c33be27c4075b4",
+  "install_home": "C:\\ProgramData\\SAI\\SAIPEN\\runtime\\acfb97b835400d59",
+  "kind": "conformance_receipt",
+  "log_hash": "68879fbdb94e9e72",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "receipt_id": "receipt-7fa052c46b1d",
+  "remediation_commands": [],
+  "schema_version": 2,
+  "source_head": "no-git",
+  "source_tree_fingerprint": "no-git-tree-v1:329361e67dea7b18869b79ae21ab1bcb1bf66d6e7bef19ffd1bdc58fd0d96f0e",
+  "state_hash": "005442f8161beaeb",
+  "timestamp_utc": "2026-11-22T19:48:52.490759Z",
+  "validator_protocol_version": "1",
+  "verdict": "PASS"
+}

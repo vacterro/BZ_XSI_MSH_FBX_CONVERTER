@@ -1,0 +1,26 @@
+{
+  "op_id": "sweep-b6b243f0e7354f13849fb790ded75d73",
+  "operation": "sweep",
+  "created_at": "2026-11-23T07:11:26Z",
+  "agent": "saipen",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "semantic_payload_hash": "81b75e083e7f6a8d",
+  "preconditions": {
+    ".saipen/improve/imp-_bz_xsi_msh_fbx_converter-20261122-6/SWEEP.md": ""
+  },
+  "read_preconditions": {},
+  "verification_policy": "improve_atomic_file",
+  "status": "COMMITTED",
+  "progress_index": 1,
+  "targets": [
+    {
+      "path": ".saipen/improve/imp-_bz_xsi_msh_fbx_converter-20261122-6/SWEEP.md",
+      "role": "sweep",
+      "action": "write",
+      "before_hash": "",
+      "after_hash": "41b83e6e62ff579f",
+      "applied": true
+    }
+  ]
+}

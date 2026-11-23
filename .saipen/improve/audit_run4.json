@@ -1,0 +1,3 @@
+{
+  "run_text": "NO_FINDINGS -- Clean post-T-12 tree audit: bzconv_tests.exe 35/35 PASS (incl. CLI recover dispatch integration test with proven RED/GREEN control); oracle 21/21 ALL GREEN; source fidelity fvtank 24 prims SOURCE_FIDELITY_VERIFIED; build/bzconv.exe == release/bzconv.exe sha256 f3cc0b21; RELEASE_EVIDENCE.json artifact hashes all match live files; fps fingerprint matches; BOARD has no open TODO after T-12 (only publication pending: no Git/remote); no defects found."
+}

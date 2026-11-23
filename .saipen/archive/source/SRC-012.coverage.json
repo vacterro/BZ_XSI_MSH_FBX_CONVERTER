@@ -1,0 +1,14 @@
+{
+  "requirements": {
+    "SRC-012:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "disposition": "VERIFIED",
+      "evidence": "E-253",
+      "text": "Night Shift 2: reproduce and repair P0 OutputBundle recovery/data-safety and source-fidelity false-success defects, verify with RED/GREEN and real assets, then ship only proven release",
+      "verification": "saipen test suite run T-14 -> PASS",
+      "work": "T-14"
+    }
+  },
+  "schema_version": 1
+}

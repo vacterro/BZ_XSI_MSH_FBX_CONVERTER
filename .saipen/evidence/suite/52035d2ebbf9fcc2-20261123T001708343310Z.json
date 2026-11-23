@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "kind": "saipen-suite-record",
+  "command": [
+    "build/bzconv_tests.exe",
+    "--json"
+  ],
+  "command_sha256": "52035d2ebbf9fcc20c130fa51dc9f3c5b905469a6b581f61f9b0c3f41e776f3e",
+  "status": "PASS",
+  "exit_code": 0,
+  "totals": null,
+  "duration_s": 1.6,
+  "timeout_s": 3600,
+  "subject_before": "tree:7f0faf151bf08df11ab125e0c021b9522b6eff6ebd3da4ed410996524d92bc2c",
+  "subject": "tree:7f0faf151bf08df11ab125e0c021b9522b6eff6ebd3da4ed410996524d92bc2c",
+  "stdout_tail": "========================================\n       bzconv Test Suite\n========================================\n[RUN]  test_probe_valid_xsi... PASSED\n[RUN]  test_probe_invalid_file... PASSED\n[RUN]  test_parse_xsi_geometry... PASSED\n[RUN]  test_export_glb... PASSED\n[RUN]  test_export_obj... PASSED\n[RUN]  test_export_fbx_if_blender_available... PASSED\n[RUN]  test_animation_only_xsi... PASSED\n[RUN]  test_real_docb_msh_if_available... PASSED\n[RUN]  test_atomic_write_file_safety... PASSED\n[RUN]  test_skin_influence_cap... PASSED\n[RUN]  test_skin_payload_preserves_8_influences... PASSED\n[RUN]  test_overwrite_policy... PASSED\n[RUN]  test_fbx_validation_no_false_pass... PASSED\n[RUN]  test_result_classification... PASSED\n[RUN]  test_animation_only_auto_needs_companion... PASSED\n[RUN]  test_companion_node_index_remap... PASSED\n[RUN]  test_source_level_p0_guards... PASSED\n[RUN]  test_glb_exact_influence_limit_and_renormalization... PASSED\n[RUN]  test_glb_influence_edge_cases... PASSED\n[RUN]  test_status_glb_loss_forces_partial... PASSED\n[RUN]  test_gltf_sidecar_overwrite_policy... PASSED\n[RUN]  test_gltf_texture_sidecar_overwrite_policy... PASSED\n[RUN]  test_obj_sidecar_overwrite_policy... PASSED\n[RUN]  test_companion_multiclip_same_bone... PASSED\n[RUN]  test_output_bundle_cancel_reason... PASSED\n========================================\nSummary: 25/25 passed (ALL TESTS PASSED)\n",
+  "stderr_tail": "",
+  "tree_changed_during_run": false,
+  "finished_utc": "2026-11-23T00:17:08Z",
+  "verdict": "PASS",
+  "problems": []
+}

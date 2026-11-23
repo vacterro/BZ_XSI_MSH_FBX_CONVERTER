@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "created": "2026-11-23T18:38:02.228878+00:00",
+  "verifier_sha256": "3bfc308a96d1852dc5117253e6ac547cd1d057724feee1b2edc181c25d30ba29",
+  "oracle_dependency_sha256": "b2a2ceaac3858a0d276ea22f32e6c0a7e39c47e5afacca0c4625e0a1453e52e3",
+  "runs": {
+    "before": {
+      "exit": 1,
+      "subject_sha256": "2d3306214fc247a3b354f1a82c80ee506677a8ddef689403767440b85eb554db",
+      "lines": [
+        "[fidelity] material binding swap detected: FAIL (['MATERIAL_COUNT'])",
+        "[fidelity] material binding removal detected: FAIL ([])",
+        "[fidelity] middle animation key mutation detected: FAIL ([])",
+        "FIDELITY ORACLE RESULT: 3 FAILED: ['material binding swap detected', 'material binding removal detected', 'middle animation key mutation detected']"
+      ]
+    },
+    "after": {
+      "exit": 0,
+      "subject_sha256": "bfc1ac716b67258821a22b3c15bc6fa2ba72b0d383f5242241a33de2f14e952e",
+      "lines": [
+        "[fidelity] material binding swap detected: PASS",
+        "[fidelity] material binding removal detected: PASS",
+        "[fidelity] middle animation key mutation detected: PASS",
+        "FIDELITY ORACLE RESULT: ALL GREEN"
+      ]
+    }
+  }
+}

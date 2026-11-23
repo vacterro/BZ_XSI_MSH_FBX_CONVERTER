@@ -1,0 +1,14 @@
+{
+  "clauses": {
+    "SRC-008:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "text": "Fix SAIHANDOFF-10 confirmed P0: model-space normal transform direction, parent-order-independent world matrix resolver, skinned model-space bind-pose localization and skeleton root, real PNG/JPEG decode validation with diagnostics"
+    }
+  },
+  "derived_at": "2026-11-23T01:07:43Z",
+  "derived_from": "SRC-008",
+  "interpretation_revision": 1,
+  "schema_version": 1,
+  "source_sha256": "31b4e58a914185fc26729374bea5c713cb1cc9e07863fc036e97f8f7cc98d685"
+}

@@ -1,0 +1,14 @@
+{
+  "requirements": {
+    "SRC-004:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "disposition": "VERIFIED",
+      "evidence": "T-4 closed with verification evidence in LOG: verify -> PASS [target: T-4] conf: high -- build/bzconv_tests.exe 15/15 PASS; release/ contains bzconv.exe, bzconv_gui.exe, bzconv_tests.exe, bridge scripts, MinGW DLLs, README only; 673/673 XSI corpus and FBX round-trip evidence unchanged from T-3; improve cycle 4 NO_FINDINGS complete",
+      "text": "status",
+      "verification": "the Work this request created reached its own verification gate; see the T-4 VERIFY cycle in .saipen/LOG.md",
+      "work": "T-4"
+    }
+  },
+  "schema_version": 1
+}

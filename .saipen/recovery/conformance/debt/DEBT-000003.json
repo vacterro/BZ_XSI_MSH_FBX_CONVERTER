@@ -1,0 +1,50 @@
+{
+  "board_sha256": "4246e532d2eda656",
+  "bound_work": "T-3",
+  "bound_work_phase": "SCOUT",
+  "created_at": "2026-11-22T20:57:37Z",
+  "findings_digest": "5a77d4cee7362fb6c7094e94d0a375b6b6815c2db29b3c226021489f2bb625f0",
+  "gate": "core",
+  "journal_op_id": "debt.snapshot-ca905d35ce14",
+  "log_fingerprint": "1c5fd893fc453fd8",
+  "problem_count": 0,
+  "problems": [],
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "reason": "pre-BUILD debt baseline for T-3",
+  "ruleset_fingerprint": "9a47d608ed3f3a833348aaeeca5cd9e9076f3bf53b1ef92b6ade46958e3e3fec",
+  "ruleset_version": 2,
+  "schema_version": 1,
+  "snapshot_id": "DEBT-000003",
+  "source_head": "no-git",
+  "source_tree_fingerprint": "no-git-tree-v1:f6160e8fb27232a4ca6ae1440aeb3b6fa5a6c56d46f9bf3c027c89b83f5f342d",
+  "state_sha256": "e20c5e3fd97b4472",
+  "validator_protocol_version": "1",
+  "warning_count": 2,
+  "warnings": [
+    {
+      "category": "no-conformance-record",
+      "credential": false,
+      "detail": "no LOG line records a conformance run in \u00a7 1.2's fixed form (`RUN: validate.py -> PASS` or `-> FAIL`), so \u00a7 1.10's `saipen status` has nothing to report under Conformance and a cold agent must either ",
+      "detail_hash": "0f511cf104b0873e",
+      "finding_key": "76b48f23558dce11",
+      "rule_id": "unclassified",
+      "severity": "warning",
+      "subject_id": null,
+      "subject_kind": "global",
+      "subject_ref": null
+    },
+    {
+      "category": "changelog-unarchived",
+      "credential": false,
+      "detail": "CHANGELOG.md carries <n> while it states it keeps the most recent ~10 -- the overflow belongs in CHANGELOG_ARCHIVE.md, moved verbatim the way LOG segments are sealed, so the top of the file stays the part anyone actually reads",
+      "detail_hash": "434b52b44ae55366",
+      "finding_key": "a0424a3e4cacc44c",
+      "rule_id": "changelog_unarchived",
+      "severity": "warning",
+      "subject_id": null,
+      "subject_kind": "global",
+      "subject_ref": null
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "requirements": {
+    "SRC-007:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "disposition": "VERIFIED",
+      "evidence": "T-7 closed with verification evidence in LOG: verify -> PASS [target: T-7] conf: high -- measured regression pair FAIL/PASS; 28/28 suite PASS",
+      "text": "Fix new confirmed P0 defects from SAIHANDOFF-9: GLB double transform for vertices_in_model_space, core input/output identity guard, silent texture loss diagnostics; then fix OutputBundle cancellation error propagation and add RED/GREEN regressions",
+      "verification": "the Work this request created reached its own verification gate; see the T-7 VERIFY cycle in .saipen/LOG.md",
+      "work": "T-7"
+    }
+  },
+  "schema_version": 1
+}

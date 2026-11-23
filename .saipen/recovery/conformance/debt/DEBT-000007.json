@@ -1,0 +1,63 @@
+{
+  "board_sha256": "2c042c019b5bee0f",
+  "bound_work": "T-7",
+  "bound_work_phase": "SCOUT",
+  "created_at": "2026-11-23T00:20:23Z",
+  "findings_digest": "c37976a4853ed27f56c734c07e4ae06b79b7a05fbd6c6fca919f3a6a7c37e737",
+  "gate": "core",
+  "journal_op_id": "debt.snapshot-adc16d100f3a",
+  "log_fingerprint": "a029cc151f64f413",
+  "problem_count": 1,
+  "problems": [
+    {
+      "category": null,
+      "credential": false,
+      "detail": ".saipen/kitchen/digest.md must be exactly three lines -- done:/remaining:/awaiting: in that order (phases/ship.md, RFC \u00a7 1.10); got 1 line(s)",
+      "detail_hash": "4f6e2dd49b8d1780",
+      "finding_key": "76b48f23558dce11",
+      "rule_id": "unclassified",
+      "severity": "problem",
+      "subject_id": null,
+      "subject_kind": "global",
+      "subject_ref": null
+    }
+  ],
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "reason": "pre-BUILD debt baseline for T-7",
+  "ruleset_fingerprint": "9a47d608ed3f3a833348aaeeca5cd9e9076f3bf53b1ef92b6ade46958e3e3fec",
+  "ruleset_version": 2,
+  "schema_version": 1,
+  "snapshot_id": "DEBT-000007",
+  "source_head": "no-git",
+  "source_tree_fingerprint": "no-git-tree-v1:ca9e7853a8ea2981c69421b3693157b047c902bc21c617d6a764af1c24acbbb9",
+  "state_sha256": "996396ca9dde5944",
+  "validator_protocol_version": "1",
+  "warning_count": 2,
+  "warnings": [
+    {
+      "category": "no-conformance-record",
+      "credential": false,
+      "detail": "no LOG line records a conformance run in \u00a7 1.2's fixed form (`RUN: validate.py -> PASS` or `-> FAIL`), so \u00a7 1.10's `saipen status` has nothing to report under Conformance and a cold agent must either ",
+      "detail_hash": "0f511cf104b0873e",
+      "finding_key": "76b48f23558dce11",
+      "rule_id": "unclassified",
+      "severity": "warning",
+      "subject_id": null,
+      "subject_kind": "global",
+      "subject_ref": null
+    },
+    {
+      "category": "changelog-unarchived",
+      "credential": false,
+      "detail": "CHANGELOG.md carries <n> while it states it keeps the most recent ~10 -- the overflow belongs in CHANGELOG_ARCHIVE.md, moved verbatim the way LOG segments are sealed, so the top of the file stays the part anyone actually reads",
+      "detail_hash": "434b52b44ae55366",
+      "finding_key": "a0424a3e4cacc44c",
+      "rule_id": "changelog_unarchived",
+      "severity": "warning",
+      "subject_id": null,
+      "subject_kind": "global",
+      "subject_ref": null
+    }
+  ]
+}

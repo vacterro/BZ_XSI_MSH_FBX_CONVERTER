@@ -1,0 +1,3 @@
+{
+  "run_text": "NO_FINDINGS -- Post-T-12 audit: bzconv_tests.exe 35/35 PASS, oracle 21/21 ALL GREEN, source fidelity fvtank SOURCE_FIDELITY_VERIFIED. Found release/bzconv.exe hash ac142f8a stale vs build f3cc0b21 after T-12 rebuild; synced release binary and refreshed RELEASE_EVIDENCE.json artifact hashes in-place, verified build==release sha256 f3cc0b21. BOARD has no open TODO tickets; no residual defect requiring a finding."
+}

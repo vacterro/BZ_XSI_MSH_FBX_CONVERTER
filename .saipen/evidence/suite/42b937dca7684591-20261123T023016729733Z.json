@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "kind": "saipen-suite-record",
+  "command": [
+    "bzconv_tests.exe",
+    "--json"
+  ],
+  "command_sha256": "42b937dca7684591341f11674269b28a61895f38586aac56773094ef50a160d0",
+  "status": "PASS",
+  "exit_code": 0,
+  "totals": null,
+  "duration_s": 1.9,
+  "timeout_s": 3600,
+  "subject_before": "tree:0e1ff24a2846bae3d968af37a5fb79a0c2f3ef07e1255583cde7400495ae8c61",
+  "subject": "tree:0e1ff24a2846bae3d968af37a5fb79a0c2f3ef07e1255583cde7400495ae8c61",
+  "stdout_tail": "fbx_if_blender_available... PASSED\n[RUN]  test_animation_only_xsi... PASSED\n[RUN]  test_real_docb_msh_if_available... PASSED\n[RUN]  test_atomic_write_file_safety... PASSED\n[RUN]  test_skin_influence_cap... PASSED\n[RUN]  test_skin_payload_preserves_8_influences... PASSED\n[RUN]  test_overwrite_policy... PASSED\n[RUN]  test_fbx_validation_no_false_pass... PASSED\n[RUN]  test_result_classification... PASSED\n[RUN]  test_animation_only_auto_needs_companion... PASSED\n[RUN]  test_companion_node_index_remap... PASSED\n[RUN]  test_source_level_p0_guards... PASSED\n[RUN]  test_glb_exact_influence_limit_and_renormalization... PASSED\n[RUN]  test_glb_influence_edge_cases... PASSED\n[RUN]  test_status_glb_loss_forces_partial... PASSED\n[RUN]  test_gltf_sidecar_overwrite_policy... PASSED\n[RUN]  test_gltf_texture_sidecar_overwrite_policy... PASSED\n[RUN]  test_obj_sidecar_overwrite_policy... PASSED\n[RUN]  test_companion_multiclip_same_bone... PASSED\n[RUN]  test_output_bundle_cancel_reason... PASSED\n[RUN]  test_glb_model_space_no_double_transform... PASSED\n[RUN]  test_input_output_identity_guard... PASSED\n[RUN]  test_glb_texture_loss_diagnostics... PASSED\n[RUN]  test_glb_rotated_model_space_normal... PASSED\n[RUN]  test_glb_parent_after_child_order... PASSED\n[RUN]  test_glb_skinned_model_space_bind_pose... PASSED\n[RUN]  test_glb_invalid_images_rejected... PASSED\n---- T-9 (SAIHANDOFF-11) regression cases ----\n[RUN]  t9_world_space_normal_reconstruction...[T9] t9_world_space_normal_reconstruction PASSED\n PASSED\n[RUN]  t9_missing_joint_attributes...[T9] t9_missing_joint_attributes PASSED\n PASSED\n[RUN]  t9_invalid_jpeg_rejected...[T9] t9_invalid_jpeg_rejected PASSED\n PASSED\n[RUN]  t9_valid_indexed_png_accepted...[T9] t9_valid_indexed_png_accepted PASSED\n PASSED\n[RUN]  t9_cycle_not_serialized...[T9] t9_cycle_not_serialized PASSED\n PASSED\n[RUN]  t9_instance_localization...[T9] t9_instance_localization PASSED\n PASSED\n========================================\nSummary: 32/32 passed (ALL TESTS PASSED)\n",
+  "stderr_tail": "",
+  "tree_changed_during_run": false,
+  "finished_utc": "2026-11-23T02:30:16Z",
+  "verdict": "PASS",
+  "problems": []
+}

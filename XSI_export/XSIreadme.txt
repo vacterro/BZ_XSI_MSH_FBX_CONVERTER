@@ -1,0 +1,15 @@
+This BZII compatible XSI exporter was created by a 3rd party user named Raxx on the Anim8or.com modeling forum. Raxx, originally modified an X exporter for me, and create BZII XSI exporter from that exporter. He is very much appreciated for donating his time and effort for this project. The current version is compatible with BZII version 1 to the latest public beta. It can export a usable BZII model with basic JPG and BMP texture support; although, textures must be in powers of 2, i.e., squared. Animation and model part sub grouping are not currently supported, so models that use a parent, child hierchal structure like the Assualt Tank won't link sub groups correctly for BZII; Raxx, may eventually fix this in future release of the exporter.
+
+Installing the Raxx BZII XSI exporter to auto load when Anim8or starts up.
+
+Extract and place the XSI_export.a8s script where you have Anim8or located. Start Anim8or up and select>File>Configure>put an X in Pre Load Scripts, and then restart Anim8or, then to use it select>Object>Export>from the drop down menu select the XSI export option. 
+
+Anim8or modeling basics for BZII users:
+
+Create all of the parts for your BZII model. Build the model facing down when viewed from the top viewport in Anim8or and add the HP's to the work space and postion them on the model. Use the material editor to add a basic JPG or BMP texture to the model. Then choose Object>Export>BZII XSI>Addon and hit save. This will save the model to your BZII addon folder. (Remember to create a customized ODF with the models name changed to the name you save it as when it was exported.) At this point you should be able to test it out in the map editor. If the model crashes the game go back and double check the model in Anim8or to verify the models part list. If it has no texture then verify the size is squared to like 128x128, 256x256, etc.
+
+I contributed time and effort testing the exporter for other BZII modders looking for an alternative model creation software for Battlezone II Combat Commander model making. In spite of the few nasty BZII users I encounter on Nathan Mates forum; I offer this modeling option as a small contribution to BZII out of a genuine fondness for the game. 
+
+I was very surprized and somewhat disappointed that people like GSH, Nielk1, and certain other BZII users contributed really nothing to the project. I ask for model and software testers, but to date have received no assitance in further developing the exporter. Truly sad to be quite frank. The hostility on Mates forum is very frustrating for some BZII users, but we continue to use it anyways as it seems to be one of the few remaining BZII sites still active. BZII, seems to be on the decline and only a small handful of people support it anymore. Those of us that still do are getting kind of burned out with all of the BS on Mates forum. 
+
+Anyways, If any interest for BZII and Anim8or develops; I'll stay active on Mates forum I guess until I finally permanebtly banned or completely lose interest in the game itself. Leroy aka Col Klink.  

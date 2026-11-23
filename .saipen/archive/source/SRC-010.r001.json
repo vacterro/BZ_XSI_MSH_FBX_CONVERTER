@@ -1,0 +1,14 @@
+{
+  "clauses": {
+    "SRC-010:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "text": "NIGHT SHIFT 2: repair glTF evaluator P0 oracle bugs (world matrix order, accessor byteOffset/byteStride, vertex/primitive-loss detection, animation value comparison), fixture-safe adversarial matrix, source-relative fidelity verification, real XSI/MSH asset testing"
+    }
+  },
+  "derived_at": "2026-11-23T16:39:40Z",
+  "derived_from": "SRC-010",
+  "interpretation_revision": 1,
+  "schema_version": 1,
+  "source_sha256": "e3a672173f4c1645d9d76da459df0e056cef6cd634e615c45641a007ce37f73c"
+}

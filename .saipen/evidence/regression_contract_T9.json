@@ -1,0 +1,33 @@
+{
+ "schema": 1,
+ "command": [
+  "{python}",
+  "-B",
+  "-m",
+  "unittest",
+  "tools.regression_check_T9",
+  "-v"
+ ],
+ "format": "unittest",
+ "context": [
+  "src",
+  "tests",
+  "tools",
+  "xsi's",
+  "CMakeLists.txt",
+  "VERSION",
+  "bz_fbx_bridge.py"
+ ],
+ "oracle_files": [
+  "tools/regression_check_T9.py",
+  "tests/test_main_t9.cpp",
+  "tests/test_main.cpp"
+ ],
+ "subject_files": [
+  "src/bzconverter/exporters/glb_exporter.cpp"
+ ],
+ "before": {
+  "src/bzconverter/exporters/glb_exporter.cpp": ".saipen/evidence/pre/glb_exporter.t9_pre.cpp"
+ },
+ "timeout": 900
+}

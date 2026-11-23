@@ -1,0 +1,19 @@
+{
+  "event_id": "E-290",
+  "externalization_event": {
+    "operation_id": "checkpoint-9bd49a0352a04542ae205821c2e0e6ea",
+    "reason": "new LOG event exceeds the live cap; canonical detail externalization"
+  },
+  "lossless": true,
+  "metadata_path": ".saipen/recovery/log-detail/E-290-6b6f5e280d2f135ed530a088.json",
+  "operation": "log_event_externalization",
+  "original_event_bytes": 1208,
+  "original_event_path": ".saipen/recovery/log-detail/E-290-6b6f5e280d2f135ed530a088.LOG.md",
+  "original_event_sha256": "6b6f5e280d2f135ed530a0888f3d01505daa47f872877f7430debdb52447b875",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "schema_version": 1,
+  "source": ".saipen/LOG.md",
+  "status": "COMMITTED",
+  "ticket_id": "T-16"
+}

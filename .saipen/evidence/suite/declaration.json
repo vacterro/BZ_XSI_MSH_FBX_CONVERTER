@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "kind": "saipen-suite-declaration",
+  "command": [
+    "bzconv_tests.exe",
+    "--json"
+  ],
+  "command_sha256": "42b937dca7684591341f11674269b28a61895f38586aac56773094ef50a160d0",
+  "timeout_s": 3600,
+  "declared_utc": "2026-11-23T02:17:10Z"
+}

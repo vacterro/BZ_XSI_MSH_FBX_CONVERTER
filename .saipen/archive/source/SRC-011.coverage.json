@@ -1,0 +1,14 @@
+{
+  "requirements": {
+    "SRC-011:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "disposition": "VERIFIED",
+      "evidence": "E-231",
+      "text": "Night Shift 2: reproduce and repair P0 OutputBundle recovery data-safety and source-fidelity false-success defects, verify on real assets, ship proven release",
+      "verification": "cmake build RC0; bzconv_tests 35/35 PASS; evaluator oracle green; fidelity oracle 8/8 PASS; T9 7/7; suite d7ed9a6385ee3793f28a8f47e8a3cb48f7cf0b5252a64ad09b815c289b7caf02 PASS; real XSI/MSH GLB VERIFIED",
+      "work": "T-13"
+    }
+  },
+  "schema_version": 1
+}

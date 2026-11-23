@@ -1,0 +1,14 @@
+{
+  "requirements": {
+    "SRC-005:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "disposition": "VERIFIED",
+      "evidence": "T-5 closed with verification evidence in LOG: verify -> PASS [target: T-5] conf: high -- cmake --build build -j4; build/bzconv_tests.exe 17/17 PASS; RED controls: GLB 8-influence JOINTS_1 red exit 1 / green exit 0, zero-weight fallback red 1 / green 0, companion identity map red 1 / green 0; XSI inspect 673/673; fvtank_MORPH FBX VERIFIED_SUCCESS; ivtank00.xsi FBX VERIFIED_SUCCESS; mebridge2 NEEDS_COMPANION_ASSET; release hashes in RELEASE_EVI",
+      "text": "SAIHANDOFF-5 Night Shift 2: fix GLB silent skin weight loss and artificial bone assignment, companion node-index remapping, GUI output-path drift, queue buffer overflow, multi-select Remove, rebuild independent FBX validation oracle, multi-frame animation validation, non-Windows compile regression, and verify release provenance",
+      "verification": "the Work this request created reached its own verification gate; see the T-5 VERIFY cycle in .saipen/LOG.md",
+      "work": "T-5"
+    }
+  },
+  "schema_version": 1
+}

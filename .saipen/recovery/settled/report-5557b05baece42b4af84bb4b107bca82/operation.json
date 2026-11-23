@@ -1,0 +1,26 @@
+{
+  "op_id": "report-5557b05baece42b4af84bb4b107bca82",
+  "operation": "report",
+  "created_at": "2026-11-23T16:45:02Z",
+  "agent": "saipen",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "semantic_payload_hash": "e693573d603096fe",
+  "preconditions": {
+    ".saipen/improve/imp-_bz_xsi_msh_fbx_converter-20261123-2/saipen-02/saipen_improve_SAIPEN.md": "1f454a640ccb2a3e"
+  },
+  "read_preconditions": {},
+  "verification_policy": "improve_atomic_file",
+  "status": "COMMITTED",
+  "progress_index": 1,
+  "targets": [
+    {
+      "path": ".saipen/improve/imp-_bz_xsi_msh_fbx_converter-20261123-2/saipen-02/saipen_improve_SAIPEN.md",
+      "role": "generic",
+      "action": "write",
+      "before_hash": "1f454a640ccb2a3e",
+      "after_hash": "cd3f99502199afc6",
+      "applied": true
+    }
+  ]
+}

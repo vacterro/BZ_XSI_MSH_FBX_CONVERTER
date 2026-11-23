@@ -1,0 +1,96 @@
+{
+  "op_id": "regression-execution-34e3a507ac5441ceabf042991b4946a1",
+  "operation": "regression_execution",
+  "created_at": "2026-11-23T00:15:43Z",
+  "agent": "saipen",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "semantic_payload_hash": "1da890a726489df5",
+  "preconditions": {
+    ".saipen/STATE.md": "2ab8b2c6e937bf57",
+    ".saipen/BOARD.md": "e434c22cee32b8e2",
+    ".saipen/LOG.md": "d559a9428f484e21"
+  },
+  "read_preconditions": {
+    ".saipen/logs": "tree-missing-v1",
+    ".": "source-identity-v1:9a0cd7cd5565d01da309a7279415d91bf7ec7c1254df19f04b88a7a9d6220a34",
+    "src/bzconverter/exporters/blender_scripts/bz_fbx_bridge.py": "c6862fdef129f883",
+    "xsi's/sgbzka_stand.xsi": "e72411c42c26678c",
+    "xsi's/mebridge2.xsi": "0fc1e9c2f0c00f9a",
+    "xsi's/ivtank00.xsi": "3bd3001a21f68cdc",
+    "src/gui/gui_main.cpp": "facbd8eb5bc3f6dc",
+    "src/cli/main.cpp": "c4ae3d4c48c8e4ee",
+    "src/bzconverter/validation/validator.hpp": "cf42baf7f06bb4f0",
+    "src/bzconverter/validation/validator.cpp": "5e8508920107fc58",
+    "src/bzconverter/scene/scene.hpp": "15399bb4fb7ec368",
+    "src/bzconverter/scene/scene.cpp": "89c8c3533101cb9c",
+    "src/bzconverter/materials/texture_codec.hpp": "204d2990322823e7",
+    "src/bzconverter/materials/texture_codec.cpp": "800a9e9ae19f9818",
+    "src/bzconverter/materials/material_resolver.hpp": "f55a3f5e50a5cb0f",
+    "src/bzconverter/materials/material_resolver.cpp": "be9a8998522fab5c",
+    "src/bzconverter/formats/xsi/xsi_parser.hpp": "99b48c1350d68170",
+    "src/bzconverter/formats/xsi/xsi_parser.cpp": "a1c8a0f1f15efe50",
+    "src/bzconverter/formats/probe.hpp": "778e3fb12cb4b54c",
+    "src/bzconverter/formats/probe.cpp": "85cfd82113c13035",
+    "src/bzconverter/formats/msh/msh_parser.hpp": "d92d465d38d69708",
+    "src/bzconverter/formats/msh/msh_parser.cpp": "825b6ff6adab285a",
+    "src/bzconverter/exporters/obj_exporter.hpp": "06f0226fc975a582",
+    "src/bzconverter/exporters/obj_exporter.cpp": "698bca5afe9ecf89",
+    "src/bzconverter/exporters/glb_exporter.hpp": "3471bee94e4a375f",
+    "src/bzconverter/exporters/glb_exporter.cpp": "572b9bb04f9d62de",
+    "src/bzconverter/exporters/fbx_exporter.hpp": "382a0cc0aed0b660",
+    "src/bzconverter/exporters/fbx_exporter.cpp": "482afcfa960d49b8",
+    "src/bzconverter/exporters/exporter.hpp": "676f11bab51e686f",
+    "src/bzconverter/core/types.hpp": "a4340ee492d2d5c7",
+    "src/bzconverter/core/sha256.hpp": "2244d631e4577a11",
+    "src/bzconverter/core/output_bundle.hpp": "fbc5c2840f623ab6",
+    "src/bzconverter/core/json.hpp": "cd9c31374c28d4c4",
+    "VERSION": "1e5b51cde515396a",
+    "tests/test_main.cpp": "4775843bde9b7288",
+    "tools/regression_check_T6e.py": "2ff6ba3384e5cde3",
+    ".saipen/evidence/regression_contract_T6.json": "f241f77d14f8643d",
+    ".saipen/evidence/pre/output_bundle.buggy.hpp": "dc4912d233ab8e29"
+  },
+  "verification_policy": "core_fast",
+  "status": "COMMITTED",
+  "progress_index": 4,
+  "targets": [
+    {
+      "path": ".saipen/evidence/regression/regression-execution-34e3a507ac5441ceabf042991b4946a1.json",
+      "role": "generic",
+      "action": "write",
+      "before_hash": "",
+      "after_hash": "5e583afd840bdfef",
+      "applied": true
+    },
+    {
+      "path": ".saipen/LOG.md",
+      "role": "log",
+      "action": "write",
+      "before_hash": "d559a9428f484e21",
+      "after_hash": "05ed255b9a03e96a",
+      "applied": true
+    },
+    {
+      "path": ".saipen/BOARD.md",
+      "role": "board",
+      "action": "write",
+      "before_hash": "e434c22cee32b8e2",
+      "after_hash": "407518527dc6f9e4",
+      "applied": true
+    },
+    {
+      "path": ".saipen/STATE.md",
+      "role": "state",
+      "action": "write",
+      "before_hash": "2ab8b2c6e937bf57",
+      "after_hash": "85e1072bdd45a632",
+      "applied": true
+    }
+  ],
+  "receipt_metadata": {
+    "ticket_id": "T-6",
+    "regression_record": ".saipen/evidence/regression/regression-execution-34e3a507ac5441ceabf042991b4946a1.json",
+    "regression_sha256": "5e583afd840bdfefe153f40f373d75dc93c098edab3b8d77f2b15b6958e712c5"
+  }
+}

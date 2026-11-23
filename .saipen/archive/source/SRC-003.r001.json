@@ -1,0 +1,14 @@
+{
+  "clauses": {
+    "SRC-003:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "text": "Night Shift 2 per SAIHANDOFF-4: repair FBX skin-weight loss, false-pass validation, GUI worker lifetime, safe output replacement; complete animation-only companion workflow, materials, Golden Default Wintage GUI, batch and portable release; verify XSI/MSH to FBX round-trip"
+    }
+  },
+  "derived_at": "2026-11-22T21:26:26Z",
+  "derived_from": "SRC-003",
+  "interpretation_revision": 1,
+  "schema_version": 1,
+  "source_sha256": "935e4fbdc646eaa00f77d03981d75bf72aee03c2978a3c7d6e4f0356651c502c"
+}

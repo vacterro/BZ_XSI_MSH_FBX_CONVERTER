@@ -1,0 +1,14 @@
+{
+  "clauses": {
+    "SRC-005:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "text": "SAIHANDOFF-5 Night Shift 2: fix GLB silent skin weight loss and artificial bone assignment, companion node-index remapping, GUI output-path drift, queue buffer overflow, multi-select Remove, rebuild independent FBX validation oracle, multi-frame animation validation, non-Windows compile regression, and verify release provenance"
+    }
+  },
+  "derived_at": "2026-11-22T22:22:40Z",
+  "derived_from": "SRC-005",
+  "interpretation_revision": 1,
+  "schema_version": 1,
+  "source_sha256": "2a29a971ce12a310780922394112a2855ae5e75dc7dde4bffd2fe7c8d899dbb3"
+}

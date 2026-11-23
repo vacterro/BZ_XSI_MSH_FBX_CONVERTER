@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "command": ["{python}", "-B", "-m", "unittest", "tools.regression_check_T14", "-v"],
+  "format": "unittest",
+  "context": ["tools/gltf_scene_evaluator.py", "tools/test_source_fidelity_oracle.py", "tools/regression_check_T14.py", "tools/source_fidelity_check.py"],
+  "oracle_files": ["tools/regression_check_T14.py", "tools/test_source_fidelity_oracle.py"],
+  "subject_files": ["tools/source_fidelity_check.py"],
+  "before": {
+    "tools/source_fidelity_check.py": ".saipen/evidence/pre/source_fidelity_check.t14_pre.py"
+  },
+  "timeout": 300
+}

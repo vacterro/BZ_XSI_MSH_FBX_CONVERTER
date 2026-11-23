@@ -1,0 +1,14 @@
+{
+  "clauses": {
+    "SRC-011:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "text": "Night Shift 2: reproduce and repair P0 OutputBundle recovery data-safety and source-fidelity false-success defects, verify on real assets, ship proven release"
+    }
+  },
+  "derived_at": "2026-11-23T17:59:15Z",
+  "derived_from": "SRC-011",
+  "interpretation_revision": 1,
+  "schema_version": 1,
+  "source_sha256": "d9b0dd2cea7e456084c0ff0d2db654e4c2bbf4242d7c60d5ead676c6b029ce84"
+}

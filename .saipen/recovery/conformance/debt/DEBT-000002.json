@@ -1,0 +1,38 @@
+{
+  "board_sha256": "7590774ef955e53b",
+  "bound_work": "T-2",
+  "bound_work_phase": "SCOUT",
+  "created_at": "2026-11-22T20:16:46Z",
+  "findings_digest": "e6302079df91a4346bddfc38266b1951f67a39828d0c3113e84646b3ecc1bea8",
+  "gate": "core",
+  "journal_op_id": "debt.snapshot-72c19a898fc0",
+  "log_fingerprint": "cfa3a057144e1849",
+  "problem_count": 0,
+  "problems": [],
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "reason": "pre-BUILD debt baseline for T-2",
+  "ruleset_fingerprint": "9a47d608ed3f3a833348aaeeca5cd9e9076f3bf53b1ef92b6ade46958e3e3fec",
+  "ruleset_version": 2,
+  "schema_version": 1,
+  "snapshot_id": "DEBT-000002",
+  "source_head": "no-git",
+  "source_tree_fingerprint": "no-git-tree-v1:75789243c074a30f2119e8ca8d7535b16d028534b1b1acec92ab5e0f52d64ffe",
+  "state_sha256": "89cd2d49d2bd476a",
+  "validator_protocol_version": "1",
+  "warning_count": 1,
+  "warnings": [
+    {
+      "category": "no-conformance-record",
+      "credential": false,
+      "detail": "no LOG line records a conformance run in \u00a7 1.2's fixed form (`RUN: validate.py -> PASS` or `-> FAIL`), so \u00a7 1.10's `saipen status` has nothing to report under Conformance and a cold agent must either ",
+      "detail_hash": "0f511cf104b0873e",
+      "finding_key": "76b48f23558dce11",
+      "rule_id": "unclassified",
+      "severity": "warning",
+      "subject_id": null,
+      "subject_kind": "global",
+      "subject_ref": null
+    }
+  ]
+}

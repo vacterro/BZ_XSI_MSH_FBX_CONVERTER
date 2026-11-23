@@ -1,0 +1,200 @@
+/*
+* Original .X plugin pieced together from Joe Cooning and Zaidon's
+* .X exporters with a bit of independent work by Raxx.
+*
+* Originally exporter written by Raxx as a .X exporter, then further
+* modified by Raxx and BNG for .XSI compatibility with
+* the Battlezone II Combat Commander game engine.
+* 1. It will export a working single model group for BZII.
+* 2. Textures are supported, but must be in powers of 2 (JPG/BMP).
+* 2a.Textures must be converted to BX2DXT for BZII PB 1.3.6 & above. 
+* 3. Animation is not supported in this version.
+* 4. Model part sub grouping is not currently supported.
+* 5. The exporter is currently a work in progress.
+* FYI: Do not group parts in Anim8or the exporter will automatically
+* group the model under a top level frame when it is exported as XSI.
+* 
+* Copyright 2012 Randall Bezant.  Permission granted for
+* modification and use, including commercial use.  Source
+* distribution must include this copyright.
+*/
+
+#plugin("object", "export", "BZII XSI", ".xsi");
+#file($output, "text");
+#return($result);
+
+file $output;
+int $result;
+
+object $curObject;
+
+$curObject = project.curObject;
+$output.print("xsi 0101txt 0032\n\nSI_CoordinateSystem coord\n\n {\n1;\n0;\n1;\n0;\n2;\n5;\n}\n\n");
+
+shape $shape, $shapes[1], $childShapes[1];
+tridata $mdata;
+int $numPoints, $numFaces, $numMaterials;
+int $ii, $jj, $tallyPoints, $index1, $index2, $index3;
+point3 $point, $normal, $tr1, $tr2, $tr3, $tr4, $p1, $p2, $p3;
+point2 $uv;
+float4x4 $transformMat;
+string $matName, $texFile, $text;
+material $material;
+texture $tex;
+
+/* The shapes in $shapes are processed in reverse order so */
+/* reverse the array of values that GeetShapes returns:    */
+
+$curObject.GetShapes($childShapes);
+$shapes.size = 0;
+while ($childShapes.size > 0)
+    $shapes.push($childShapes.pop());
+    
+	 $output.print("Frame Frm {\n     FrameTransformMatrix {\n  1.000000,0.000000,0.000000,0.000000,\n  0.000000,1.000000,0.000000,0.000000,\n  0.000000,0.000000,1.000000,0.000000,\n  0.000000,0.000000,0.000000,1.000000;;\n   }\n");
+
+
+while ($shapes.size > 0) {
+    $shape = $shapes.pop();
+    
+        if ($shape.GetKind() == SHAPE_KIND_GROUP) {
+        $shape.GetShapes($childShapes);
+        
+        while ($childShapes.size > 0) {
+            $shapes.push($childShapes.pop());
+        }
+    } else if ($shape.GetKind() == SHAPE_KIND_PATH ||
+               $shape.GetKind() == SHAPE_KIND_MODIFIER ||
+               $shape.GetKind() == SHAPE_KIND_TEXT)
+    {
+        /* No 3D mesh to output. */
+    } else {
+
+	  $mdata = $shape.GetTriangleData();
+
+	  $output.print("Frame %s {\nFrameTransformMatrix {\n", $shape.name);
+   
+        $transformMat = $shape.GetGlobalTransform();
+        $tr4=$transformMat.Project((0.0,0.0,0.0));
+        $tr1=$transformMat.Project((1.0,0.0,0.0))-$tr4;
+        $tr2=$transformMat.Project((0.0,1.0,0.0))-$tr4;
+        $tr3=$transformMat.Project((0.0,0.0,1.0))-$tr4;
+        $output.print("  %.6f,%.6f,%.6f,0.000000,\n",$tr1);
+        $output.print("  %.6f,%.6f,%.6f,0.000000,\n",$tr2);
+        $output.print("  %.6f,%.6f,%.6f,0.000000,\n",$tr3);
+        $output.print("  %.6f,%.6f,%.6f,1.000000;;\n }\n",$tr4);
+        
+                
+        $output.print("Mesh %s_mesh {\n", $shape.name);
+
+        $numPoints = $mdata.GetNumPoints();
+        $output.print("%d;\n", $numPoints);
+        for $ii = 0 to $numPoints-1 do {
+            $point = $mdata.GetPoint($ii);
+            $output.print("%.6f; %.6f; %.6f;", $point);
+		if ($ii<$numPoints-1){
+		  $output.print(",\n");
+		} else {
+		  $output.print(";\n");
+		}
+        }
+
+        $numFaces = $mdata.GetNumTriangles();
+        $output.print("\n%d;\n", $numFaces);
+        for $ii = 0 to $numFaces - 1 do {
+		$output.print("3;%d,%d,%d;", $mdata.GetIndex($ii*3), $mdata.GetIndex($ii*3+1), $mdata.GetIndex($ii*3+2));
+		if ($ii<$numFaces-1){
+		   $output.print(",\n");
+		} else {
+		  $output.print(";\n");
+		}
+        }
+    $output.print("\nMeshMaterialList {\n");
+        $numMaterials = $mdata.GetNumMaterials();
+	  $output.print("%d;\n", $numMaterials);
+	  $output.print("%d;\n", $numFaces);
+	  for $ii = 0 to $numFaces - 1 do {
+		$output.print("%d", $mdata.GetMatIndex($ii));
+		if ($ii<$numFaces - 1) {
+		  $output.print(",\n");
+		} else {
+		  $output.print(";\n");
+		}
+	  }
+        for $ii = 0 to $numMaterials - 1 do {
+            $material = $mdata.GetMaterial($ii);
+		$tex = $material.GetTexture(TEXTURE_DIFFUSE);
+            $matName = $material.name;
+            if ($matName == " -- default --") {
+                $matName = "___default___";
+            }
+            $output.print("SI_Material %s {\n", $matName);
+            $output.print("%.6f; %.6f; %.6f; %.6f;;\n", $material.diffuse, $material.alpha);
+		$output.print("%.6f;\n", $material.Ks);
+            $output.print("%.6f; %.6f; %.6f;;\n", $material.specular); 
+            $output.print("%.6f; %.6f; %.6f;;\n", $material.emissive);
+            $output.print("1;\n");
+            $output.print("%.6f; %.6f; %.6f;;\n", $material.ambient);
+		$texFile = $tex.GetFileName();
+            if ($texFile != ""){
+		    $output.print("TextureFilename {\n\"%s.%s\";\n}\n", $texFile.GetRoot(), $texFile.GetExt());
+		}
+		$output.print("}\n");
+	  }
+        $output.print("}\n");
+      
+        $output.print("SI_MeshNormals {\n%d;\n", $numPoints);
+        for $ii = 0 to $numPoints - 1 do {
+          $normal = $mdata.GetNormal($ii);
+
+          $output.print("%.6f; %.6f; %.6f;", $normal);
+	    if ($ii<$numPoints-1){
+		$output.print(",\n");
+	    } else {
+		$output.print(";\n");
+	    }
+        }
+
+	 $output.print("%d;\n", $numFaces);
+        for $ii = 0 to $numFaces - 1 do {
+          	$output.print("%d;", $ii);
+		$output.print("3;%d,%d,%d;", $mdata.GetIndex($ii*3), $mdata.GetIndex($ii*3 + 1), $mdata.GetIndex($ii*3+2));
+		if ($ii<$numFaces-1){
+		   $output.print(",\n");
+		} else {
+		  $output.print(";\n");
+		}
+        }
+        $output.print("}\n\n");
+        $output.print("SI_MeshTextureCoords {\n%d;\n", $numPoints);
+        for $ii = 0 to $numPoints - 1 do {
+            $uv = $mdata.GetTexCoord($ii);
+          
+            $output.print("%.5f; %.5f;", $uv);
+		if ($ii<$numPoints - 1){
+		  $output.print(",\n");
+		} else {
+		  $output.print(";\n");
+		}
+        }
+        
+	 $output.print("%d;\n", $numFaces);
+  
+        for $ii = 0 to $numFaces - 1 do {
+
+          	$output.print("%d;", $ii);
+		$output.print("3;%d,%d,%d;", $mdata.GetIndex($ii*3),$mdata.GetIndex($ii*3+1),$mdata.GetIndex($ii*3+2));
+		if ($ii<$numFaces-1){
+		   $output.print(",\n");
+		} else {
+		  $output.print(";\n");
+		}
+        }
+        $output.print("}\n");
+    $output.print("}\n");
+    }
+    
+$output.print("}\n");
+}
+$output.print("}");
+$result = 1;        /* Assume export will succeed. */
+

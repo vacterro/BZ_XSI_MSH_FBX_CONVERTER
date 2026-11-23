@@ -1,0 +1,14 @@
+{
+  "requirements": {
+    "SRC-009:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "disposition": "VERIFIED",
+      "evidence": "T-9 closed with verification evidence in LOG: verify -> PASS [target: T-9] conf: high -- measured regression pair FAIL/PASS; 38/38 suite PASS",
+      "text": "Night shift 2 \u2014 world-space fidelity, GLTF validity and release hardening",
+      "verification": "the Work this request created reached its own verification gate; see the T-9 VERIFY cycle in .saipen/LOG.md",
+      "work": "T-9"
+    }
+  },
+  "schema_version": 1
+}

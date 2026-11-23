@@ -1,0 +1,14 @@
+{
+  "requirements": {
+    "SRC-003:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "disposition": "VERIFIED",
+      "evidence": "T-3 closed with verification evidence in LOG: verify -> PASS [target: T-3] conf: high -- cmake --build build -j4 (built all targets); build/bzconv_tests.exe 15/15 PASS; regression red control with pre-fix false-green in fbx_exporter.cpp exit 1, restored source green exit 0; 673/673 XSI inspect PASS; fvtank_MORPH XSI -> FBX VERIFIED_SUCCESS via Blender re-import (526 tris, 4 mats, 1 anim); ivtank00.msh -> FBX 1110 tris verified with static-ani",
+      "text": "Night Shift 2 per SAIHANDOFF-4: repair FBX skin-weight loss, false-pass validation, GUI worker lifetime, safe output replacement; complete animation-only companion workflow, materials, Golden Default Wintage GUI, batch and portable release; verify XSI/MSH to FBX round-trip",
+      "verification": "the Work this request created reached its own verification gate; see the T-3 VERIFY cycle in .saipen/LOG.md",
+      "work": "T-3"
+    }
+  },
+  "schema_version": 1
+}

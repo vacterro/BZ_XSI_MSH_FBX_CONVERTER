@@ -1,0 +1,14 @@
+{
+  "requirements": {
+    "SRC-006:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "disposition": "VERIFIED",
+      "evidence": "T-6 closed with verification evidence in LOG: verify -> PASS [target: T-6] conf: high -- measured regression pair FAIL (buggy bundle error propagation) then PASS (fixed), 25/25 suite PASS",
+      "text": "Fix confirmed P0 defects from SAIHANDOFF: GLB influence cap + weight renormalization, GLB loss diagnostics to status, transactional multi-file output bundles with GLTF .bin and OBJ .mtl/texture overwrite safety, companion multi-clip coverage; add RED/GREEN regressions",
+      "verification": "the Work this request created reached its own verification gate; see the T-6 VERIFY cycle in .saipen/LOG.md",
+      "work": "T-6"
+    }
+  },
+  "schema_version": 1
+}

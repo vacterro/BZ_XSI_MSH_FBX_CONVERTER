@@ -1,0 +1,38 @@
+{
+  "op_id": "rebind_home-ec7f6a794b0f40bbab20cd73f5d40896",
+  "operation": "rebind_home",
+  "created_at": "2026-11-22T20:56:27Z",
+  "agent": "saipen",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "semantic_payload_hash": "006e04e385ce6478",
+  "preconditions": {
+    ".saipen/STATE.md": "5666087dc7e60263",
+    ".saipen/LOG.md": "49a9aa943ee7ddc1"
+  },
+  "read_preconditions": {
+    ".saipen/BOARD.md": "1db72afed7f57b67",
+    ".saipen/logs": "tree-missing-v1"
+  },
+  "verification_policy": "core_fast",
+  "status": "COMMITTED",
+  "progress_index": 2,
+  "targets": [
+    {
+      "path": ".saipen/LOG.md",
+      "role": "log",
+      "action": "write",
+      "before_hash": "49a9aa943ee7ddc1",
+      "after_hash": "b1ebc65f706ec9eb",
+      "applied": true
+    },
+    {
+      "path": ".saipen/STATE.md",
+      "role": "state",
+      "action": "write",
+      "before_hash": "5666087dc7e60263",
+      "after_hash": "67cadce24d300368",
+      "applied": true
+    }
+  ]
+}
