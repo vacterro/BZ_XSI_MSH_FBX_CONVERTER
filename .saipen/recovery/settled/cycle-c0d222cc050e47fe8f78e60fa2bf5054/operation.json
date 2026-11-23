@@ -1,0 +1,26 @@
+{
+  "op_id": "cycle-c0d222cc050e47fe8f78e60fa2bf5054",
+  "operation": "cycle",
+  "created_at": "2026-11-23T20:17:51Z",
+  "agent": "saipen",
+  "project_identity": "v:\\___vac\\__k\\__code\\_misc\\_bz_xsi_msh_fbx_converter",
+  "project_lineage": "lineage-7db9c439e0c341eabe469934a5f49dc5",
+  "semantic_payload_hash": "1d75101a80ce2aa6",
+  "preconditions": {
+    ".saipen/improve/imp-vacterro-bz_xsi_msh_fbx_converter-20261123-2/MANIFEST.md": "a7a5280a156c2dd1"
+  },
+  "read_preconditions": {},
+  "verification_policy": "improve_atomic_file",
+  "status": "COMMITTED",
+  "progress_index": 1,
+  "targets": [
+    {
+      "path": ".saipen/improve/imp-vacterro-bz_xsi_msh_fbx_converter-20261123-2/MANIFEST.md",
+      "role": "manifest",
+      "action": "write",
+      "before_hash": "a7a5280a156c2dd1",
+      "after_hash": "9f5869cec3c6d53d",
+      "applied": true
+    }
+  ]
+}
