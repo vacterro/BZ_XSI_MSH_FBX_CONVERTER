@@ -1,0 +1,14 @@
+{
+  "clauses": {
+    "SRC-013:R001": {
+      "actionable": true,
+      "class": "requirement",
+      "text": "\u0421\u0434\u0435\u043b\u0430\u0439 exe GUI \u0432\u0435\u0440\u0441\u0438\u044e \u0438 \u0437\u0430\u043f\u0443\u0448 \u043d\u043e\u0440\u043c\u0430\u043b\u044c\u043d\u0443\u044e 0.0.1"
+    }
+  },
+  "derived_at": "2026-11-23T20:33:27Z",
+  "derived_from": "SRC-013",
+  "interpretation_revision": 1,
+  "schema_version": 1,
+  "source_sha256": "9bba02c5f15de32f462cfa397c3c30bcfb7ca17261acd15abcf222b86474a573"
+}
