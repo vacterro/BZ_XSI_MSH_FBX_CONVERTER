@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-11-23T22:27:52.075908",
-  "version": "0.0.1",
-  "revision": "no-git-tree-v2:6231ec2e6336a31056ecc432b9e4dfa813517be4b02ad48b7cbc6de8cd7c353b",
-  "source_manifest_sha256": "6231ec2e6336a31056ecc432b9e4dfa813517be4b02ad48b7cbc6de8cd7c353b",
+  "timestamp": "2026-11-23T22:48:49.015024",
+  "version": "0.0.2",
+  "revision": "no-git-tree-v2:b704d99d9f25fc554115c58674af262e2734632cc95cb3f4c020527f8d90ca26",
+  "source_manifest_sha256": "b704d99d9f25fc554115c58674af262e2734632cc95cb3f4c020527f8d90ca26",
   "source_files": [
     "src/bzconverter/core/json.hpp",
     "src/bzconverter/core/output_bundle.hpp",
@@ -49,7 +49,9 @@
     "build/bzconv_tests.exe (35/35 PASS, exit0; +5 T-13 durable-recovery witnesses in tests/test_main_t13.cpp)",
     "bzconv recover <dir> CLI dispatch integration test (35/35 PASS)",
     "T-17: VERSION bumped to 0.0.1; CMake reconfigured and rebuilt; CLI --version -> bzconv 0.0.1",
-    "T-17: GUI window title observed via PowerShell MainWindowTitle -> bzconv 0.0.1 - Battlezone XSI/MSH Converter"
+    "T-17: GUI window title observed via PowerShell MainWindowTitle -> bzconv 0.0.1 - Battlezone XSI/MSH Converter",
+    "T-18: GUI Help dialog + Auto-install dependencies (find system Blender or download portable 4.5.3); build URLDownloadToFile+tar silent, no admin",
+    "T-18: live UI: Help window observed; Auto-install found C:\\Program Files\\Blender Foundation\\Blender 4.5\blender.exe and wrote bzconv.ini"
   ],
   "tests": {
     "pass": 35,
@@ -132,7 +134,7 @@
   },
   "fingerprint_formula": "sha256 over each source_files entry as UTF-8 path + \"\n\" + sha256(file bytes) + \"\n\", in listed order",
   "gui_smoke": {
-    "window": "bzconv 0.0.1 - Battlezone XSI/MSH Converter (Win32, PID observed)",
+    "window": "bzconv 0.0.2 - Battlezone XSI/MSH Converter (Win32, PID observed)",
     "screenshot": "build/gui_smoke.png",
     "screenshot_sha256": "7a3f1636ac86af14ef6e7f7caaece35d63468ea6d2a04fc923d72b179fef922c",
     "findings": "Window renders in golden/vintage palette, no white controls; FBX/GLB/glTF/OBJ toggles, Animations/Materials/Textures checkboxes, status+log panes visible; result_class_to_string at gui_main.cpp:829 logs VERIFIED_SUCCESS vs PARTIAL/FAILED distinctly."
@@ -144,16 +146,16 @@
     "tools/test_source_fidelity_oracle.py": "279ac48f75d744e64ef646a622cc63e0cadd0f14f0d0e85f0466d9b87a8f5a6a"
   },
   "artifact_sha256": {
-    "build/bzconv.exe": "473f92f51beafdccccb540beb5976bd9c4227587fa9d201f33e2fa9b04f84d70",
-    "build/bzconv_gui.exe": "2f6d0f5f268df0418bd129b4b262b8bb5f8af9216c2d50fc19fbe55f35e21f21",
-    "build/bzconv_tests.exe": "1af0ee5b984b2cfc8980309bd3b4ea2d3e4d342d8d81271571205cdaef430630",
+    "build/bzconv.exe": "bf331ff380ac2acb2c99376dea98e9ed5afa09275a705402c94bac6bf5f5a2d4",
+    "build/bzconv_gui.exe": "f71a9575e370294d3e1ebd7dc437f93eb22d3adb6a22c876eb2c4db8348b05eb",
+    "build/bzconv_tests.exe": "a3239d374aa5422d5d4f2a6365635fc2e0c5b708eaf338964bceaad98d794ab0",
     "build/final_fvtank_t13.glb": "8f9c5ce895208c261fedc1366e0146719a9c856e729075d3bdf5592992fe1a58",
     "build/final_ivtank00_t13.glb": "29eac67d35d67876b92dc874988ea69878e85c780d29f3462ba20dcf51dcca08",
     "build/final_fvtank_t13.fbx": "cc68297b83fbba72a9f23b2d7cfd091e60f90cb2ce13f3b429220be802083895",
     "build/final_ivtank00_t13.fbx": "2ed5e31b4cc82da591c555ecbcd016d60da3a5fed87adf4fb29ad5170d34ebfb",
-    "release/bzconv.exe": "473f92f51beafdccccb540beb5976bd9c4227587fa9d201f33e2fa9b04f84d70",
-    "release/bzconv_gui.exe": "2f6d0f5f268df0418bd129b4b262b8bb5f8af9216c2d50fc19fbe55f35e21f21",
-    "release/bzconv_tests.exe": "1af0ee5b984b2cfc8980309bd3b4ea2d3e4d342d8d81271571205cdaef430630"
+    "release/bzconv.exe": "bf331ff380ac2acb2c99376dea98e9ed5afa09275a705402c94bac6bf5f5a2d4",
+    "release/bzconv_gui.exe": "f71a9575e370294d3e1ebd7dc437f93eb22d3adb6a22c876eb2c4db8348b05eb",
+    "release/bzconv_tests.exe": "a3239d374aa5422d5d4f2a6365635fc2e0c5b708eaf338964bceaad98d794ab0"
   },
   "manifest_version": 2
 }

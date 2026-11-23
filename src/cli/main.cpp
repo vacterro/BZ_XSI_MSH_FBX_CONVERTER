@@ -25,7 +25,7 @@ namespace fs = std::filesystem;
 namespace {
 
 #ifndef BZCONV_VERSION
-#define BZCONV_VERSION "0.0.1"
+#define BZCONV_VERSION "0.0.2"
 #endif
 const char* VERSION_STRING = BZCONV_VERSION;
 

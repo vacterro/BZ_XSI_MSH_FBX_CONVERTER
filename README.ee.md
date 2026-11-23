@@ -6,7 +6,7 @@ kaasasolevat Blenderi silda.
 
 Portatiivne versioon: `release/README.txt`. Käsurea abi: `bzconv --help`.
 
-Praegune versioon: **v0.0.1**
+Praegune versioon: **v0.0.2**
 
 Kontrolli staatused on eristatud: `FILE_WRITTEN`, `STRUCTURALLY_VALID`,
 `GEOMETRY_VERIFIED`, `FULL_SCENE_VERIFIED`, `PARTIAL_LOSS`.

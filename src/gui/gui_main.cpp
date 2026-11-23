@@ -16,6 +16,7 @@
 #include <commdlg.h>
 #include <shellapi.h>
 #include <shlobj.h>
+#include <urlmon.h>
 
 #include <algorithm>
 #include <atomic>
@@ -55,13 +56,15 @@ enum : int {
     ID_LBL_BLENDER, ID_BLENDER_EDIT, ID_BLENDER_BROWSE,
     ID_LBL_COMPANION, ID_COMPANION_EDIT, ID_COMPANION_BROWSE,
     ID_LBL_GAME, ID_GAME_EDIT, ID_LBL_SEARCH, ID_SEARCH_EDIT,
-    ID_PROGRESS, ID_STATUS, ID_CONVERT, ID_CANCEL, ID_OPEN_OUT, ID_LOG
+    ID_PROGRESS, ID_STATUS, ID_CONVERT, ID_CANCEL, ID_OPEN_OUT, ID_LOG,
+    ID_SETUP_DEPS, ID_HELP, ID_HELP_CLOSE
 };
 
-constexpr UINT WM_APP_LOG      = WM_APP + 1;
-constexpr UINT WM_APP_ITEM     = WM_APP + 2;
-constexpr UINT WM_APP_PROGRESS = WM_APP + 3;
-constexpr UINT WM_APP_DONE     = WM_APP + 4;
+constexpr UINT WM_APP_LOG          = WM_APP + 1;
+constexpr UINT WM_APP_ITEM         = WM_APP + 2;
+constexpr UINT WM_APP_PROGRESS     = WM_APP + 3;
+constexpr UINT WM_APP_DONE         = WM_APP + 4;
+constexpr UINT WM_APP_SET_BLENDER  = WM_APP + 5;
 
 const wchar_t* FORMATS[] = {L"FBX", L"GLB", L"glTF", L"OBJ"};
 const wchar_t* EXTS[]    = {L".fbx", L".glb", L".gltf", L".obj"};
@@ -177,6 +180,181 @@ void append_log(const std::wstring& line) {
     SendMessageW(g_log, EM_SETSEL, len, len);
     std::wstring t = line + L"\r\n";
     SendMessageW(g_log, EM_REPLACESEL, FALSE, reinterpret_cast<LPARAM>(t.c_str()));
+}
+
+// --- Dependency setup (T-18) ------------------------------------------------
+// Portable Blender is installed under %LOCALAPPDATA%\bzconv\deps so no admin
+// rights are required. The download and extraction run on the existing worker
+// thread; the main window is notified with the resulting blender.exe path.
+const wchar_t* BLENDER_ZIP_URL =
+    L"https://download.blender.org/release/Blender4.5/blender-4.5.3-windows-x64.zip";
+const wchar_t* BLENDER_ZIP_NAME = L"blender-4.5.3-windows-x64.zip";
+
+fs::path deps_dir() {
+    wchar_t base[MAX_PATH] = L"";
+    if (SUCCEEDED(SHGetFolderPathW(nullptr, CSIDL_LOCAL_APPDATA, nullptr, 0, base)))
+        return fs::path(base) / L"bzconv" / L"deps";
+    return fs::current_path() / L"bzconv_deps";
+}
+
+fs::path find_blender_exe(const fs::path& root) {
+    std::error_code ec;
+    if (!fs::exists(root, ec)) return {};
+    for (fs::recursive_directory_iterator it(root, ec), end; it != end && !ec; it.increment(ec)) {
+        if (!it->is_regular_file(ec)) continue;
+        std::wstring name = it->path().filename().wstring();
+        std::transform(name.begin(), name.end(), name.begin(), [](wchar_t c) {
+            return static_cast<wchar_t>(std::tolower(static_cast<unsigned char>(c)));
+        });
+        if (name == L"blender.exe") return it->path();
+    }
+    return {};
+}
+
+bool run_silent_process(const std::wstring& exe, const std::wstring& args) {
+    STARTUPINFOW si{}; si.cb = sizeof(si); si.dwFlags = STARTF_USESHOWWINDOW; si.wShowWindow = SW_HIDE;
+    PROCESS_INFORMATION pi{};
+    std::wstring cmd = L"\"" + exe + L"\" " + args;
+    if (!CreateProcessW(exe.c_str(), cmd.data(), nullptr, nullptr, FALSE,
+                        CREATE_NO_WINDOW, nullptr, nullptr, &si, &pi))
+        return false;
+    WaitForSingleObject(pi.hProcess, INFINITE);
+    DWORD code = 0; GetExitCodeProcess(pi.hProcess, &code);
+    CloseHandle(pi.hThread); CloseHandle(pi.hProcess);
+    return code == 0;
+}
+
+// Runs on g_worker. Installs Blender portably if no usable installation is
+// configured or detected, then posts the chosen blender.exe to the UI thread.
+void setup_dependencies() {
+    post_item(L"Checking dependencies...");
+    fs::path existing = find_blender_exe(deps_dir());
+    if (existing.empty()) {
+        const wchar_t* roots[] = {
+            L"C:\\Program Files\\Blender Foundation",
+            L"C:\\Program Files (x86)\\Blender Foundation",
+        };
+        for (const wchar_t* r : roots) {
+            existing = find_blender_exe(fs::path(r));
+            if (!existing.empty()) break;
+        }
+    }
+    if (!existing.empty()) {
+        post_item(L"Blender already installed: " + existing.wstring());
+        PostMessageW(g_hwnd, WM_APP_SET_BLENDER, 0,
+                     reinterpret_cast<LPARAM>(new std::wstring(existing.wstring())));
+        PostMessageW(g_hwnd, WM_APP_DONE, 0, 0);
+        return;
+    }
+
+    fs::path dir = deps_dir();
+    std::error_code ec;
+    fs::create_directories(dir, ec);
+    fs::path zip = dir / BLENDER_ZIP_NAME;
+    if (!fs::exists(zip, ec)) {
+        post_item(L"Downloading portable Blender 4.5.3 (~400 MB), please wait...");
+        post_log(L"  source: " + std::wstring(BLENDER_ZIP_URL));
+        HRESULT hr = URLDownloadToFileW(nullptr, BLENDER_ZIP_URL, zip.wstring().c_str(), 0, nullptr);
+        if (FAILED(hr) || !fs::exists(zip, ec)) {
+            post_item(L"Blender download FAILED (HRESULT " + std::to_wstring(hr) + L").");
+            post_log(L"  Install Blender manually and set the Blender path in Settings.");
+            PostMessageW(g_hwnd, WM_APP_DONE, 0, 0);
+            return;
+        }
+    }
+    post_item(L"Extracting Blender (this may take a minute)...");
+    wchar_t sysdir[MAX_PATH] = L"";
+    GetSystemDirectoryW(sysdir, static_cast<UINT>(std::size(sysdir)));
+    std::wstring tar_exe = std::wstring(sysdir) + L"\\tar.exe";
+    if (!fs::exists(tar_exe, ec)) tar_exe = L"tar.exe";
+    bool extracted = run_silent_process(tar_exe,
+        L"-xf \"" + zip.wstring() + L"\" -C \"" + dir.wstring() + L"\"");
+    fs::path blender = extracted ? find_blender_exe(dir) : fs::path();
+    if (blender.empty()) {
+        post_item(L"Blender extraction FAILED. Set the Blender path manually in Settings.");
+    } else {
+        post_item(L"Blender ready: " + blender.wstring());
+        PostMessageW(g_hwnd, WM_APP_SET_BLENDER, 0,
+                     reinterpret_cast<LPARAM>(new std::wstring(blender.wstring())));
+    }
+    PostMessageW(g_hwnd, WM_APP_DONE, 0, 0);
+}
+
+void start_dependency_setup() {
+    if (g_worker_active.load()) return;
+    g_worker_active = true;
+    g_cancel_flag = false;
+    g_worker = std::thread(setup_dependencies);
+}
+
+// --- In-app help (T-18) -----------------------------------------------------
+std::wstring help_text() {
+    return
+        L"bzconv - Battlezone XSI/MSH Converter - how to use\r\n"
+        L"====================================================\r\n\r\n"
+        L"1) Add files: press Add files / Add folder, or drag .xsi/.msh files onto the window.\r\n"
+        L"2) Output dir: where converted files go (blank = next to each source file).\r\n"
+        L"3) Format: FBX (needs Blender), GLB / glTF / OBJ (native, no Blender).\r\n"
+        L"4) Options: Animations / Materials / Textures, Overwrite existing, BZCC axis.\r\n"
+        L"5) Blender: for FBX export. Press Auto-install dependencies to download a\r\n"
+        L"   portable Blender into %%LOCALAPPDATA%%\\bzconv\\deps (no admin rights needed),\r\n"
+        L"   or pick blender.exe yourself with the Blender... button.\r\n"
+        L"6) Companion / Game paths / Search paths: optional material and companion-model\r\n"
+        L"   lookup hints for Battlezone assets; leave blank if unsure.\r\n"
+        L"7) Press Convert queue. Progress and per-file verdicts appear in the log.\r\n"
+        L"   A green result is only reported when verification truly passes; PARTIAL\r\n"
+        L"   means some data could not be verified and is never shown as full success.\r\n\r\n"
+        L"Safe defaults: existing outputs are NOT replaced unless Overwrite existing is on.\r\n"
+        L"FBX export needs Blender 4.x/5.x; GLB, glTF and OBJ work without it.\r\n";
+}
+
+LRESULT CALLBACK HelpProc(HWND h, UINT m, WPARAM w, LPARAM l) {
+    static HWND edit = nullptr, close_btn = nullptr;
+    switch (m) {
+    case WM_CREATE: {
+        RECT rc; GetClientRect(h, &rc);
+        int wd = rc.right, ht = rc.bottom;
+        edit = CreateWindowExW(0, L"EDIT", help_text().c_str(),
+            WS_CHILD | WS_VISIBLE | WS_VSCROLL | ES_MULTILINE | ES_READONLY | ES_AUTOVSCROLL,
+            12, 12, wd - 24, ht - 56, h, reinterpret_cast<HMENU>(static_cast<INT_PTR>(1)),
+            reinterpret_cast<CREATESTRUCTW*>(l)->hInstance, nullptr);
+        close_btn = CreateWindowExW(0, L"BUTTON", L"Close",
+            WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON | WS_TABSTOP,
+            wd - 100, ht - 36, 88, 26, h, reinterpret_cast<HMENU>(static_cast<INT_PTR>(2)),
+            reinterpret_cast<CREATESTRUCTW*>(l)->hInstance, nullptr);
+        SendMessageW(edit, WM_SETFONT, reinterpret_cast<WPARAM>(GetStockObject(DEFAULT_GUI_FONT)), TRUE);
+        SetFocus(edit);
+        return 0;
+    }
+    case WM_COMMAND:
+        if (LOWORD(w) == 2) { DestroyWindow(h); return 0; }
+        return 0;
+    case WM_CLOSE: DestroyWindow(h); return 0;
+    case WM_DESTROY: PostQuitMessage(0); return 0;
+    }
+    return DefWindowProcW(h, m, w, l);
+}
+
+void show_help(HINSTANCE inst) {
+    const wchar_t* cls = L"BzConvHelp";
+    WNDCLASSW wc{};
+    wc.lpfnWndProc = HelpProc;
+    wc.hInstance = inst;
+    wc.lpszClassName = cls;
+    wc.hbrBackground = reinterpret_cast<HBRUSH>(GetStockObject(COLOR_WINDOW + 1));
+    RegisterClassW(&wc);
+    HWND h = CreateWindowExW(WS_EX_DLGMODALFRAME, cls, L"bzconv - Help",
+        WS_OVERLAPPEDWINDOW & ~WS_MAXIMIZEBOX & ~WS_THICKFRAME,
+        CW_USEDEFAULT, CW_USEDEFAULT, 560, 460, g_hwnd, nullptr, inst, nullptr);
+    if (!h) return;
+    EnableWindow(g_hwnd, FALSE);
+    ShowWindow(h, SW_SHOW);
+    MSG msg;
+    while (IsWindow(h) && GetMessageW(&msg, nullptr, 0, 0) > 0) {
+        if (!IsDialogMessageW(h, &msg)) { TranslateMessage(&msg); DispatchMessageW(&msg); }
+    }
+    EnableWindow(g_hwnd, TRUE);
+    SetForegroundWindow(g_hwnd);
 }
 
 int S(int px) { return MulDiv(px, g_dpi, 96); }
@@ -600,6 +778,8 @@ void layout() {
     place(g_convert, m, y, 140, 30);
     place(g_cancel, m + 148, y, 100, 30);
     place(GetDlgItem(g_hwnd, ID_OPEN_OUT), m + 256, y, 150, 30);
+    place(GetDlgItem(g_hwnd, ID_SETUP_DEPS), m + 414, y, 190, 30);
+    place(GetDlgItem(g_hwnd, ID_HELP), W - m - 90, y, 90, 30);
     y += 38;
     place(g_log, m, y, W - 2 * m, std::max(90, H - y - m));
 }
@@ -640,6 +820,8 @@ void build_ui() {
     g_convert = make(L"BUTTON", L"Convert queue", WS_TABSTOP | BS_OWNERDRAW, ID_CONVERT);
     g_cancel = make(L"BUTTON", L"Cancel", WS_TABSTOP | BS_OWNERDRAW, ID_CANCEL);
     make(L"BUTTON", L"Open output folder", WS_TABSTOP | BS_OWNERDRAW, ID_OPEN_OUT);
+    make(L"BUTTON", L"Auto-install dependencies", WS_TABSTOP | BS_OWNERDRAW, ID_SETUP_DEPS);
+    make(L"BUTTON", L"Help", WS_TABSTOP | BS_OWNERDRAW, ID_HELP);
     g_log = make(L"EDIT", L"", WS_VSCROLL | ES_MULTILINE | ES_READONLY | ES_AUTOVSCROLL, ID_LOG);
     EnableWindow(g_cancel, FALSE);
 
@@ -701,6 +883,8 @@ LRESULT CALLBACK wnd_proc(HWND h, UINT m, WPARAM w, LPARAM l) {
             for (int i = 0; i < 4; ++i) InvalidateRect(GetDlgItem(h, ID_FMT0 + i), nullptr, FALSE);
             return 0;
         }
+        case ID_SETUP_DEPS: start_dependency_setup(); return 0;
+        case ID_HELP: show_help(reinterpret_cast<HINSTANCE>(GetWindowLongPtrW(h, GWLP_HINSTANCE))); return 0;
         case ID_ADD_FILES: browse_files(); return 0;
         case ID_ADD_FOLDER: browse_folder(false); return 0;
         case ID_OUT_BROWSE: browse_folder(true); return 0;
@@ -779,6 +963,16 @@ LRESULT CALLBACK wnd_proc(HWND h, UINT m, WPARAM w, LPARAM l) {
     case WM_APP_PROGRESS:
         g_progress_value = static_cast<int>(w); if (g_progress) InvalidateRect(g_progress, nullptr, FALSE);
         return 0;
+    case WM_APP_SET_BLENDER: {
+        auto* s = reinterpret_cast<std::wstring*>(l);
+        if (s) {
+            set_text(g_blender, *s);
+            g_settings.blender = *s;
+            save_settings();
+            delete s;
+        }
+        return 0;
+    }
     case WM_APP_DONE:
         finish_worker(g_closing);
         return 0;
@@ -827,7 +1021,7 @@ int WINAPI wWinMain(HINSTANCE inst, HINSTANCE, LPWSTR, int show) {
     RECT r{0, 0, S(760), S(560)};
     AdjustWindowRect(&r, WS_OVERLAPPEDWINDOW, FALSE);
 #ifndef BZCONV_VERSION
-#define BZCONV_VERSION "0.0.1"
+#define BZCONV_VERSION "0.0.2"
 #endif
     std::wstring version_wide;
     for (const char* c = BZCONV_VERSION; *c; ++c) version_wide.push_back(static_cast<wchar_t>(*c));

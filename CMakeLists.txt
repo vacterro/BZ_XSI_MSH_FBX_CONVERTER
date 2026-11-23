@@ -90,7 +90,7 @@ add_custom_command(TARGET bzconv POST_BUILD
 # Test executable
 if(WIN32)
     add_executable(bzconv_gui WIN32 src/gui/gui_main.cpp)
-    target_link_libraries(bzconv_gui PRIVATE bzconverter_core comdlg32 comctl32 gdi32 user32 shell32 ole32 uxtheme)
+    target_link_libraries(bzconv_gui PRIVATE bzconverter_core comdlg32 comctl32 gdi32 user32 shell32 ole32 uxtheme urlmon)
     if(MINGW)
         target_link_options(bzconv_gui PRIVATE -municode)
     endif()
