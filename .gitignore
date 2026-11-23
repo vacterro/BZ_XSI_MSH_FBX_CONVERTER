@@ -15,6 +15,11 @@
 build/
 bin/
 *.exe
+# T-17: the portable release binaries are the published artifact and must be
+# versioned; ignore only stray executables outside release/.
+!release/*.exe
+release/bzconv.ini
+release/gui_smoke.log
 *.glb
 *.fbx
 *.obj

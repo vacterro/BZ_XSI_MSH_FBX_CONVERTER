@@ -6,7 +6,7 @@ the bundled Blender bridge.
 
 Portable release: see `release/README.txt`. CLI: `bzconv --help`.
 
-Current release: **v1.2.0**
+Current release: **v0.0.1**
 
 Verification statuses are deliberately distinct: `FILE_WRITTEN`,
 `STRUCTURALLY_VALID`, `GEOMETRY_VERIFIED`, `FULL_SCENE_VERIFIED`, `PARTIAL_LOSS`.

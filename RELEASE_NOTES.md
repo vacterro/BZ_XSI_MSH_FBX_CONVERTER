@@ -1,4 +1,4 @@
-# bzconv 1.2.0
+# bzconv 0.0.1
 
 P0 fidelity repair over 1.1.0:
 - GLB: multiple JOINTS_n/WEIGHTS_n sets (1/4/5/8 influences), zero-weight vertices stay unassigned, explicit influence-limit diagnostics for compatibility profile.
@@ -13,7 +13,7 @@ P0 data-integrity repair (this revision):
 - All multi-file outputs use one transactional bundle: GLTF .bin and textures, OBJ .mtl and textures are declared and preflighted before any write. overwrite=false preserves every existing user file. Failed commits restore originals.
 - Companion coverage counts unique animated source nodes, so multiple clips animating the same bone map correctly while missing or ambiguous targets still fail.
 - GUI preflight now checks GLTF .bin, OBJ .mtl and existing texture sidecars. Embedded NUL in a wide literal replaced with L'\0'.
-- Version metadata now comes from the VERSION file; CLI and glTF generator report 1.2.0.
+- Version metadata now comes from the VERSION file; CLI and glTF generator report 0.0.1.
 
 Data-safety repair (SAIHANDOFF-9):
 - GLB no longer double-transforms `vertices_in_model_space` geometry. Positions/normals are localized through the inverse node world matrix; non-invertible transforms get an explicit identity node and diagnostic.

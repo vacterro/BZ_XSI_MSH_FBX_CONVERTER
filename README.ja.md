@@ -6,7 +6,7 @@ GLB / glTF / OBJ はネイティブ書き出し、FBX はインストール済�
 
 ポータブル版は `release/README.txt`、CLI のヘルプは `bzconv --help`。
 
-現在のバージョン: **v1.2.0**
+現在のバージョン: **v0.0.1**
 
 検証ステータスは明確に区別されます: `FILE_WRITTEN`、`STRUCTURALLY_VALID`、
 `GEOMETRY_VERIFIED`、`FULL_SCENE_VERIFIED`、`PARTIAL_LOSS`。

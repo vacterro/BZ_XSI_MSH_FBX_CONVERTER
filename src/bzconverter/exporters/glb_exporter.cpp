@@ -161,7 +161,7 @@ bool export_scene_gltf(const Scene& scene, const std::filesystem::path& out_path
     Json asset = Json::object();
     asset["version"] = "2.0";
     #ifndef BZCONV_VERSION
-#define BZCONV_VERSION "1.2.0"
+#define BZCONV_VERSION "0.0.1"
 #endif
     asset["generator"] = std::string("BZ_XSI_MSH_FBX_CONVERTER ") + BZCONV_VERSION;
     gltf["asset"] = std::move(asset);

@@ -6,7 +6,7 @@ kaasasolevat silda.
 
 Portatiivne komplekt: `release/README.txt`. Käsurea abi: `bzconv --help`.
 
-Praegune versioon: **v1.2.0**
+Praegune versioon: **v0.0.1**
 
 Staatused ei ole üks suur roheline: `FILE_WRITTEN`, `STRUCTURALLY_VALID`,
 `GEOMETRY_VERIFIED`, `FULL_SCENE_VERIFIED`, `PARTIAL_LOSS`.

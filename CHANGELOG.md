@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.0
+## 0.0.1
 
 - C++20 XSI/MSH conversion core, GLB/glTF/OBJ exporters, Blender FBX bridge,
   Win32 Golden Default GUI.

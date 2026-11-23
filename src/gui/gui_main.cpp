@@ -826,7 +826,13 @@ int WINAPI wWinMain(HINSTANCE inst, HINSTANCE, LPWSTR, int show) {
 
     RECT r{0, 0, S(760), S(560)};
     AdjustWindowRect(&r, WS_OVERLAPPEDWINDOW, FALSE);
-    HWND hwnd = CreateWindowExW(0, wc.lpszClassName, L"bzconv - Battlezone XSI/MSH Converter",
+#ifndef BZCONV_VERSION
+#define BZCONV_VERSION "0.0.1"
+#endif
+    std::wstring version_wide;
+    for (const char* c = BZCONV_VERSION; *c; ++c) version_wide.push_back(static_cast<wchar_t>(*c));
+    std::wstring title = L"bzconv " + version_wide + L" - Battlezone XSI/MSH Converter";
+    HWND hwnd = CreateWindowExW(0, wc.lpszClassName, title.c_str(),
                                 WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT,
                                 r.right - r.left, r.bottom - r.top, nullptr, nullptr, inst, nullptr);
     if (!hwnd) return 1;
